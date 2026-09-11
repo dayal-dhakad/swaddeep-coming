@@ -1,0 +1,90 @@
+.slider {
+  position: relative;
+  height: clamp(31rem, 64svh, 45rem);
+  min-height: 31rem;
+  overflow: hidden;
+  background: #0a0a0a;
+  color: white;
+}
+
+.slides,
+.slide { position: absolute; inset: 0; }
+
+.slide {
+  opacity: 0;
+  transform: scale(1.025);
+  pointer-events: none;
+  transition: opacity .9s ease, transform 1.2s ease;
+  overflow: hidden;
+}
+
+.active { opacity: 1; transform: scale(1); pointer-events: auto; }
+.image { width: 100%; height: 100%; object-fit: cover; }
+
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,.68) 100%);
+  pointer-events: none;
+}
+
+.caption {
+  position: absolute;
+  z-index: 2;
+  right: clamp(1.5rem, 5vw, 6rem);
+  bottom: 2.4rem;
+  display: flex;
+  min-width: min(28rem, 45vw);
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: 1rem;
+  border-top: .0625rem solid rgba(255,255,255,.75);
+}
+
+.caption span {
+  font: 500 clamp(.75rem, .9vw, .9rem)/1.2 var(--font-work-sans);
+  letter-spacing: .12rem;
+  text-transform: uppercase;
+}
+
+.caption strong {
+  font: 400 clamp(2.5rem, 4vw, 4.5rem)/.9 var(--font-bebas-neue);
+  text-transform: uppercase;
+}
+
+.controls {
+  position: absolute;
+  z-index: 5;
+  left: clamp(1.5rem, 5vw, 6rem);
+  bottom: 2.4rem;
+  display: flex;
+  gap: .75rem;
+}
+
+.controls button {
+  width: 3rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  border-bottom: .0625rem solid rgba(255,255,255,.55);
+  background: transparent;
+  cursor: pointer;
+  color: white;
+  font: 600 .75rem/1 var(--font-work-sans);
+  transition: border-color .2s;
+}
+
+.controls .current { border-bottom-width: .22rem; border-bottom-color: white; }
+.controls button:focus-visible { outline: .125rem solid white; outline-offset: .2rem; }
+
+@media (max-width: 40rem) {
+  .slider { height: 29rem; min-height: 29rem; }
+  .caption { right: 1.25rem; bottom: 4.8rem; left: 1.25rem; min-width: 0; }
+  .controls { left: 1.25rem; bottom: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide { transition: none; }
+}
