@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Geist, Geist_Mono, Work_Sans } from "next/font/google";
+import {
+  Bebas_Neue,
+  Geist,
+  Geist_Mono,
+  Work_Sans,
+} from "next/font/google";
 import localFont from "next/font/local";
 import { ComingSoon } from "@/components/coming-soon";
 import { seoKeywords } from "@/lib/seo-keywords";
@@ -28,8 +33,8 @@ const workSans = Work_Sans({
   subsets: ["latin"],
 });
 
-const amithen = localFont({
-  src: "./fonts/Amithen.otf",
+const displayScript = localFont({
+  src: "./fonts/RusticRoadway.otf",
   variable: "--font-amithen-face",
   weight: "400",
   style: "normal",
@@ -50,7 +55,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${workSans.variable} ${amithen.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${workSans.variable} ${displayScript.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {showComingSoon ? <ComingSoon /> : children}

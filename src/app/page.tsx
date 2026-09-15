@@ -4,7 +4,7 @@ import Link from "next/link";
 import { HeroSlider } from "@/components/hero-slider";
 import { SiteHeader } from "@/components/site-header";
 import { ContactForm } from "@/components/contact-form";
-import { ElementMarks, TriangleMark } from "@/components/triangle-mark";
+import { TriangleMark } from "@/components/triangle-mark";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -58,15 +58,38 @@ const marqueeItems = [
 ];
 
 const clientLogos = [
-  "Kamal Brand", "GBM", "Shree Ganesh Besan Mill", "Gangwal",
-  "Dharmesh Masti", "Ashokraj Resorts and Farms", "Dharmesh Masti",
-  "Shubh Life", "Harsh Inn", "The Royal Rasoi", "Hotel Shivani Palace",
-  "Dollson", "Citymall", "Rajputana Vehicle", "OM Gaurav Hygiene Products",
-  "DLN", "Cream Cafe", "Travel Konnect", "The Royal Ecole",
-  "Shree SCM Developers", "Chhabariya Dental Clinic", "PWK",
-  "Chill N Grill", "7th Heaven", "Mopo", "Lioness Agro",
-  "Jayanti Kalp Investments", "Lotus Foam", "Midtown Supermarket",
-  "Fast Food", "Harsh Jewellers", "Suraj Enterprises", "Fashion House",
+  { title: "Kamal Brand", image: "/client-logos/1.png" },
+  { title: "GBM", image: "/client-logos/2.png" },
+  { title: "Shree Ganesh Besan Mill", image: "/client-logos/3.png" },
+  { title: "Gangwal", image: "/client-logos/4.png" },
+  { title: "Dharmesh Masti", image: "/client-logos/5.png" },
+  { title: "Ashokraj Resorts and Farms", image: "/client-logos/6.png" },
+  { title: "Shubh Life", image: "/client-logos/8.png" },
+  { title: "Harsh Inn", image: "/client-logos/9.png" },
+  { title: "The Royal Rasoi", image: "/client-logos/10.png" },
+  { title: "Hotel Shivani Palace", image: "/client-logos/11.png" },
+  { title: "Dollson", image: "/client-logos/12.png" },
+  { title: "Citymall", image: "/client-logos/13.png" },
+  { title: "Rajputana Vehicle", image: "/client-logos/14.png" },
+  { title: "OM Gaurav Hygiene Products", image: "/client-logos/15.png" },
+  { title: "DLN", image: "/client-logos/16.png" },
+  { title: "Cream Cafe", image: "/client-logos/17.png" },
+  { title: "Travel Konnect", image: "/client-logos/18.png" },
+  { title: "The Royal Ecole", image: "/client-logos/19.png" },
+  { title: "Shree SCM Developers", image: "/client-logos/20.png" },
+  { title: "Chhabariya Dental Clinic", image: "/client-logos/21.png" },
+  { title: "PWK", image: "/client-logos/22.png" },
+  { title: "Chill N Grill", image: "/client-logos/23.png" },
+  { title: "7th Heaven", image: "/client-logos/24.png" },
+  { title: "Mopo", image: "/client-logos/25.png" },
+  { title: "Lioness Agro", image: "/client-logos/26.png" },
+  { title: "Jayanti Kalp Investments", image: "/client-logos/27.png" },
+  { title: "Lotus Foam", image: "/client-logos/28.png" },
+  { title: "Midtown Supermarket", image: "/client-logos/29.png" },
+  { title: "Fast Food", image: "/client-logos/30.png" },
+  { title: "Harsh Jewellers", image: "/client-logos/31.png" },
+  { title: "Suraj Enterprises", image: "/client-logos/32.png" },
+  { title: "Fashion House", image: "/client-logos/33.png" },
 ];
 
 export default function Home() {
@@ -99,20 +122,8 @@ export default function Home() {
             href="#work"
             aria-label="Explore our approach"
           >
-            <Image
-              src="https://ik.imagekit.io/swaddeep/homepage/Explore.png"
-              alt=""
-              fill
-              sizes="7rem"
-              className={styles.exploreRing}
-            />
-            <Image
-              src="https://ik.imagekit.io/swaddeep/homepage/Polygon.png"
-              alt=""
-              width={20}
-              height={20}
-              className={styles.exploreArrow}
-            />
+            <span>Explore</span>
+            <TriangleMark variant="fire" className={styles.exploreTriangle} />
           </a>
         </section>
 
@@ -158,11 +169,11 @@ export default function Home() {
         </section>
 
         <section className={styles.challenge} aria-labelledby="challenge-title">
-          <div className={styles.fan} aria-hidden="true">
-            {Array.from({ length: 13 }, (_, index) => (
-              <i key={index} />
-            ))}
-            <TriangleMark variant="reflect" className={styles.reflectMark} />
+          <div className={styles.challengeMark} aria-hidden="true">
+            <TriangleMark
+              variant="progress"
+              className={styles.challengeMarkSymbol}
+            />
           </div>
           <div className={styles.challengeCopy}>
             <h2 id="challenge-title">
@@ -185,7 +196,16 @@ export default function Home() {
           className={styles.capsule}
           aria-label="What a speaking identity requires"
         >
-          <TriangleMark variant="express" className={`${styles.triangle} ${styles.capsuleTriangle}`} />
+          <div className={styles.capsuleSymbol} aria-hidden="true">
+            <TriangleMark
+              variant="express"
+              className={styles.capsuleSymbolEcho}
+            />
+            <TriangleMark
+              variant="express"
+              className={styles.capsuleSymbolMark}
+            />
+          </div>
           <h2>
             A speaking
             <br />
@@ -205,7 +225,6 @@ export default function Home() {
               <strong>CRAFT</strong> across every touchpoint
             </li>
           </ul>
-          <TriangleMark variant="transition" className={`${styles.triangle} ${styles.capsuleTriangle}`} />
         </section>
 
         <section
@@ -294,8 +313,7 @@ export default function Home() {
         <section className={styles.aboutCta} aria-labelledby="about-cta-title">
           <h2 id="about-cta-title">
             From instinct
-            <br />
-            to impact
+            <br /> to impact
           </h2>
           <div>
             <p>
@@ -313,14 +331,17 @@ export default function Home() {
           <div className={styles.clienteleHeading}>
             <p>Selected collaborations</p>
             <h2 id="clientele-title">Our clientele</h2>
-            <span aria-hidden="true">33</span>
+            {/* <span aria-hidden="true">33</span> */}
           </div>
           <div className={styles.logoGrid}>
-            {clientLogos.map((name, index) => (
-              <figure className={styles.logoCard} key={`${name}-${index}`}>
+            {clientLogos.map((img, index) => (
+              <figure
+                className={styles.logoCard}
+                key={`${img?.title}-${index}`}
+              >
                 <Image
-                  src={`/client-logos/${index + 1}.png`}
-                  alt={`${name} logo`}
+                  src={img?.image}
+                  alt={img?.title}
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 1120px) 33vw, 17vw"
                   className={styles.clientLogo}
@@ -375,13 +396,21 @@ export default function Home() {
           </div> */}
         </div>
 
-        <ElementMarks className={styles.elementMarks} />
+        {/* Element symbols temporarily hidden. */}
+        {/* <ElementMarks className={styles.elementMarks} /> */}
 
         <div className={styles.footerBase}>
           <span>India</span>
           <span>© {new Date().getFullYear()} Swaddeep</span>
           <a href="#top">Back to top ↑</a>
         </div>
+
+        <p className={styles.legalNotice}>
+          All the copyrights of clientele artwork are reserved with respective
+          associates. Reproducing or imitating them for business allows our
+          associates to take legal action. None of the copyrights are with
+          Swaddeep. Swaddeep is displaying the catalogue via this website.
+        </p>
       </footer>
     </>
   );

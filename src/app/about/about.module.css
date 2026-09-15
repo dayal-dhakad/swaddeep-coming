@@ -5,7 +5,7 @@
 .heroTitle { margin-block: auto; padding-block: 3rem; }
 .heroTitle p,.heroTitle h1 { margin: 0; font-weight: 400; }
 .heroTitle p { font: 400 clamp(5rem,13vw,13rem)/.72 var(--font-bebas-neue); text-transform: uppercase; }
-.heroTitle h1 { margin-left: clamp(1rem,15vw,17rem); font: 400 clamp(6rem,17vw,18rem)/.72 var(--font-amithen-face); }
+.heroTitle h1 { margin-left: clamp(1rem,12vw,13rem); font: 400 clamp(4.5rem,11vw,12rem)/.78 var(--font-amithen-face); }
 .heroBottom { display: grid; grid-template-columns: 1fr minmax(17rem,31rem); align-items: end; gap: 3rem; }
 .heroBottom p { margin: 0; font: 400 clamp(1.05rem,1.45vw,1.45rem)/1.45 var(--font-work-sans); }
 .triangle { display: block; height: auto; flex: 0 0 auto; }
@@ -20,7 +20,7 @@
 .lede { font-size: clamp(1.6rem,2.5vw,2.6rem); line-height: 1.15; }
 .why { min-height: 46rem; padding: clamp(5rem,9vw,9rem) clamp(1.25rem,6vw,7rem); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(4rem,9vw,10rem); align-items: center; background: var(--ink); color: white; }
 .whyIntro > p:last-child { max-width: 38rem; margin: 2.5rem 0 0; font: 400 clamp(1rem,1.3vw,1.25rem)/1.65 var(--font-work-sans); }
-.why blockquote { margin: 0; font: 400 clamp(3.5rem,6.5vw,7.5rem)/.88 var(--font-amithen-face); color: var(--muted); transform: rotate(-3deg); }
+.why blockquote { margin: 0; font: 400 clamp(2.75rem,4.6vw,5.3rem)/.95 var(--font-amithen-face); color: var(--muted); transform: rotate(-2deg); }
 .awarenessLead { display: grid; grid-template-columns: minmax(20rem,1.2fr) minmax(20rem,.8fr); column-gap: clamp(4rem,10vw,11rem); }
 .awarenessLead .eyebrow { grid-column: 1 / -1; }
 .awarenessLead > p:last-child { margin: 0; font: 400 clamp(1rem,1.25vw,1.2rem)/1.65 var(--font-work-sans); }
@@ -44,7 +44,7 @@
 .processHeader .eyebrow,.linesHeader .eyebrow { margin: .5rem 0 0; }
 .noFix { padding: clamp(6rem,11vw,12rem) clamp(1.25rem,6vw,7rem); display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(4rem,10vw,12rem); background: var(--ink); color: white; }
 .noFixTitle span,.noFixTitle h2 { display: block; margin: 0; font-weight: 400; }
-.noFixTitle span { font: 400 clamp(7rem,15vw,16rem)/.65 var(--font-amithen-face); color: var(--muted); }
+.noFixTitle span { font: 400 clamp(5rem,10vw,11rem)/.75 var(--font-amithen-face); color: var(--muted); }
 .noFixTitle h2 { font: 400 clamp(6rem,11vw,12rem)/.76 var(--font-bebas-neue); text-transform: uppercase; }
 .noFixCopy { font: 400 clamp(1rem,1.25vw,1.2rem)/1.65 var(--font-work-sans); }
 .noFixCopy p { margin: 0 0 1.75rem; }
@@ -55,7 +55,7 @@
 .signatureIntro p { margin: 0; }
 .signature h2 { position: relative; z-index: 1; align-self: center; margin: 0; display: grid; width: min-content; font-weight: 400; }
 .signature h2 span { white-space: nowrap; font: 400 clamp(5rem,10vw,11rem)/.76 var(--font-bebas-neue); text-transform: uppercase; }
-.signature h2 strong { margin: -.03em 0 .08em clamp(2rem,9vw,10rem); white-space: nowrap; color: var(--brand); font: 400 clamp(7rem,15vw,17rem)/.55 var(--font-amithen-face); }
+.signature h2 strong { margin: .02em 0 .1em clamp(2rem,7vw,8rem); white-space: nowrap; color: var(--brand); font: 400 clamp(5rem,10vw,11.5rem)/.68 var(--font-amithen-face); }
 .signatureSeal { position: relative; z-index: 1; align-self: center; width: clamp(8rem,14vw,14rem); aspect-ratio: 1; display: grid; place-items: center; }
 .signatureSeal i { position: absolute; inset: 0; border: 1px solid var(--brand); border-radius: 50%; }
 .signatureSeal i:nth-child(2) { inset: 14%; }
@@ -94,7 +94,7 @@
   .servicesMark { justify-self: start; }
   .contactCta { grid-template-columns: 6rem 1fr; }
   .contactCta a { grid-column: 2; justify-self: start; }
-  .heroTitle h1 { margin-left: clamp(0rem,8vw,5rem); font-size: clamp(5.5rem,14vw,10rem); }
+  .heroTitle h1 { margin-left: clamp(0rem,6vw,4rem); font-size: clamp(4.25rem,10vw,7rem); }
   .signature { grid-template-columns: 1fr; }
   .signatureSeal { position: absolute; right: clamp(1.25rem,6vw,7rem); bottom: 10rem; opacity: .9; }
 }
@@ -102,7 +102,7 @@
 @media (max-width: 42rem) {
   .hero { min-height: 48rem; }
   .heroTopline { flex-direction: column; gap: .4rem; }
-  .heroTitle h1 { margin-left: 0; font-size: clamp(4.5rem,20vw,6rem); }
+  .heroTitle h1 { margin-left: 0; font-size: clamp(3.7rem,16vw,5rem); }
   .heroBottom { grid-template-columns: 4.5rem 1fr; gap: 1.5rem; }
   .heroBottom { width: calc(100vw - 2.5rem); max-width: calc(100vw - 2.5rem); }
   .heroBottom p { min-width: 0; overflow-wrap: anywhere; }
@@ -115,7 +115,7 @@
   .businessCopy { grid-column: auto; }
   .signature { min-height: 48rem; gap: 2rem; }
   .signature h2 span { font-size: clamp(3.8rem,18vw,5.5rem); }
-  .signature h2 strong { margin-left: clamp(1rem,8vw,3rem); font-size: clamp(5.5rem,25vw,8rem); }
+  .signature h2 strong { margin-left: clamp(1rem,6vw,2.5rem); font-size: clamp(4rem,18vw,5.8rem); }
   .signatureSeal { width: 6rem; right: 1.25rem; bottom: 8rem; opacity: .45; }
   .signatureNote { justify-self: start; max-width: calc(100% - 3rem); }
   .linesTrack li { grid-template-columns: 2rem minmax(0,1fr) auto; gap: 1rem; min-height: 7rem; }

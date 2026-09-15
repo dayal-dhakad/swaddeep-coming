@@ -43,26 +43,26 @@ export function ContactForm() {
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.twoColumns}>
           <label>
-            <span>Name <small className={styles.requirement}>Required</small></span>
+            <span>Name <small className={styles.requirement} aria-hidden="true">*</small></span>
             <input name="name" type="text" autoComplete="name" required />
           </label>
           <label>
-            <span>Email id <small className={styles.requirement}>Required</small></span>
+            <span>Email id <small className={styles.requirement} aria-hidden="true">*</small></span>
             <input name="email" type="email" autoComplete="email" required />
           </label>
         </div>
         <div className={styles.twoColumns}>
           <label>
-            <span>Phone number <small className={styles.requirement}>Required</small></span>
+            <span>Phone number <small className={styles.requirement} aria-hidden="true">*</small></span>
             <input name="phone" type="tel" autoComplete="tel" required />
           </label>
           <label>
-            <span>Organisation <small className={styles.requirement}>Required</small></span>
+            <span>Organisation <small className={styles.requirement} aria-hidden="true">*</small></span>
             <input name="organisation" type="text" autoComplete="organization" required />
           </label>
         </div>
         <label>
-          <span>Write to us <small className={styles.requirement}>Required</small></span>
+          <span>Write to us <small className={styles.requirement} aria-hidden="true">*</small></span>
           <textarea name="message" rows={7} required />
         </label>
         <label className={styles.fileField}>

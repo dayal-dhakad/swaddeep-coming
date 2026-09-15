@@ -99,7 +99,7 @@ export function SiteHeader() {
 
       <div
         id="site-menu"
-        className={`fixed bg-brand inset-0 z-[101] flex flex-col items-start justify-end overflow-auto px-[clamp(1.25rem,4vw,4.7rem)] pt-[clamp(8rem,16vh,11rem)] pb-[clamp(3rem,8vh,6rem)] transition-[transform,opacity,visibility] duration-650 ease-[cubic-bezier(0.77,0,0.18,1)] min-[781px]:flex-row min-[781px]:items-end min-[781px]:justify-between ${isAboutPage ? "bg-black" : "bg-brand"} ${isOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-full opacity-0"}`}
+        className={`fixed inset-0 z-[101] flex flex-col items-start justify-start overflow-auto px-[clamp(1.25rem,4vw,4.7rem)] pt-[clamp(8.25rem,12vw,10rem)] pb-[clamp(2rem,5vh,4rem)] transition-[transform,opacity,visibility] duration-650 ease-[cubic-bezier(0.77,0,0.18,1)] ${isAboutPage ? "bg-black" : "bg-brand"} ${isOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-full opacity-0"}`}
       >
         <nav
           className="flex flex-col items-start"
@@ -109,7 +109,11 @@ export function SiteHeader() {
             <Link
               href={item.href}
               key={item.label}
-              className={`relative block whitespace-nowrap font-bebas text-[clamp(2.15rem,9vw,3.1rem)] leading-[.98] font-bold no-underline transition-[color,opacity,transform] duration-300 ease-linear hover:text-white focus-visible:text-white min-[781px]:text-[clamp(3.25rem,5.1vw,4.85rem)] min-[781px]:leading-[.94] ${isOpen ? "translate-y-0 opacity-100" : "-translate-y-6 opacity-0"}`}
+              className={`relative block whitespace-nowrap font-bebas text-[clamp(1.8rem,7.5vw,2.8rem)] leading-[1.02] font-bold text-white/75 no-underline transition-[color,opacity,transform] duration-300 ease-linear hover:text-white focus-visible:text-white min-[781px]:text-[clamp(3rem,4.5vw,4.3rem)] min-[781px]:leading-[.98] ${
+                isOpen
+                  ? "translate-y-0 opacity-100"
+                  : "-translate-y-6 opacity-0"
+              }`}
               style={{
                 transitionDelay: isOpen ? `${280 + index * 55}ms` : "0ms",
               }}
@@ -121,7 +125,7 @@ export function SiteHeader() {
         </nav>
 
         <div
-          className="flex items-center gap-[clamp(1.5rem,3vw,3.5rem)] pb-4"
+          className="mt-auto flex items-center gap-[clamp(1.5rem,3vw,3.5rem)] pt-8 pb-4"
           aria-label="Social links"
         >
           {socialLinks.map((social) => (

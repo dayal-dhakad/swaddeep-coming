@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./site-footer.module.css";
-import { ElementMarks } from "./triangle-mark";
 
 export function SiteFooter() {
   return (
@@ -46,7 +45,8 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <ElementMarks className={styles.elementMarks} />
+      {/* Element symbols temporarily hidden. */}
+      {/* <ElementMarks className={styles.elementMarks} /> */}
 
       <div className={styles.footerBase}>
         <span>India</span>
@@ -55,11 +55,10 @@ export function SiteFooter() {
       </div>
 
       <p className={styles.legalNotice}>
-        All copyrights in clientele artwork are reserved by the respective
-        clients and associates; Swaddeep displays this work solely as part of
-        its website catalogue, holds no copyright in it, and unauthorized
-        reproduction or imitation for commercial purposes may result in legal
-        action by the respective rights holders.
+        All the copyrights of clientele artwork are reserved with respective
+        associates. Reproducing or imitating them for business allows our
+        associates to take legal action. None of the copyrights are with
+        Swaddeep. Swaddeep is displaying the catalogue via this website.
       </p>
     </footer>
   );
