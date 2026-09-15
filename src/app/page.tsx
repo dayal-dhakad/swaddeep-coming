@@ -4,6 +4,7 @@ import Link from "next/link";
 import { HeroSlider } from "@/components/hero-slider";
 import { SiteHeader } from "@/components/site-header";
 import { ContactForm } from "@/components/contact-form";
+import { ElementMarks, TriangleMark } from "@/components/triangle-mark";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -56,19 +57,17 @@ const marqueeItems = [
   "Brand Projection",
 ];
 
-function Triangle({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      className={`${styles.triangle} ${className}`}
-      viewBox="0 0 96 96"
-      fill="none"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path d="M48 7 91 88H5L48 7Z" />
-    </svg>
-  );
-}
+const clientLogos = [
+  "Kamal Brand", "GBM", "Shree Ganesh Besan Mill", "Gangwal",
+  "Dharmesh Masti", "Ashokraj Resorts and Farms", "Dharmesh Masti",
+  "Shubh Life", "Harsh Inn", "The Royal Rasoi", "Hotel Shivani Palace",
+  "Dollson", "Citymall", "Rajputana Vehicle", "OM Gaurav Hygiene Products",
+  "DLN", "Cream Cafe", "Travel Konnect", "The Royal Ecole",
+  "Shree SCM Developers", "Chhabariya Dental Clinic", "PWK",
+  "Chill N Grill", "7th Heaven", "Mopo", "Lioness Agro",
+  "Jayanti Kalp Investments", "Lotus Foam", "Midtown Supermarket",
+  "Fast Food", "Harsh Jewellers", "Suraj Enterprises", "Fashion House",
+];
 
 export default function Home() {
   return (
@@ -149,7 +148,7 @@ export default function Home() {
           <h2 className={styles.srOnly} id="principles-title">
             Our creative principles
           </h2>
-          {principles.map((principle, index) => (
+          {principles.map((principle) => (
             <article className={styles.principle} key={principle.number}>
               <span>{principle.number}</span>
               <h3>{principle.title}</h3>
@@ -163,6 +162,7 @@ export default function Home() {
             {Array.from({ length: 13 }, (_, index) => (
               <i key={index} />
             ))}
+            <TriangleMark variant="reflect" className={styles.reflectMark} />
           </div>
           <div className={styles.challengeCopy}>
             <h2 id="challenge-title">
@@ -185,7 +185,7 @@ export default function Home() {
           className={styles.capsule}
           aria-label="What a speaking identity requires"
         >
-          <Triangle className={styles.capsuleTriangle} />
+          <TriangleMark variant="express" className={`${styles.triangle} ${styles.capsuleTriangle}`} />
           <h2>
             A speaking
             <br />
@@ -205,7 +205,7 @@ export default function Home() {
               <strong>CRAFT</strong> across every touchpoint
             </li>
           </ul>
-          <Triangle className={styles.capsuleTriangle} />
+          <TriangleMark variant="transition" className={`${styles.triangle} ${styles.capsuleTriangle}`} />
         </section>
 
         <section
@@ -223,7 +223,7 @@ export default function Home() {
           </div>
           <div className={styles.identityDetails}>
             <article>
-              <Triangle />
+              <TriangleMark variant="explore" className={styles.triangle} />
               <h3>
                 Identity with
                 <br />a purpose
@@ -240,7 +240,7 @@ export default function Home() {
               </ul>
             </article>
             <article>
-              <Triangle />
+              <TriangleMark variant="create" className={styles.triangle} />
               <h3>
                 Packaging that
                 <br />
@@ -258,7 +258,7 @@ export default function Home() {
               </ul>
             </article>
             <article>
-              <Triangle />
+              <TriangleMark variant="combine" className={styles.triangle} />
               <h3>
                 Made for
                 <br />
@@ -309,6 +309,27 @@ export default function Home() {
           </div>
         </section>
 
+        <section className={styles.clientele} aria-labelledby="clientele-title">
+          <div className={styles.clienteleHeading}>
+            <p>Selected collaborations</p>
+            <h2 id="clientele-title">Our clientele</h2>
+            <span aria-hidden="true">33</span>
+          </div>
+          <div className={styles.logoGrid}>
+            {clientLogos.map((name, index) => (
+              <figure className={styles.logoCard} key={`${name}-${index}`}>
+                <Image
+                  src={`/client-logos/${index + 1}.png`}
+                  alt={`${name} logo`}
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 1120px) 33vw, 17vw"
+                  className={styles.clientLogo}
+                />
+              </figure>
+            ))}
+          </div>
+        </section>
+
         <ContactForm />
       </main>
 
@@ -353,6 +374,8 @@ export default function Home() {
             </address>
           </div> */}
         </div>
+
+        <ElementMarks className={styles.elementMarks} />
 
         <div className={styles.footerBase}>
           <span>India</span>

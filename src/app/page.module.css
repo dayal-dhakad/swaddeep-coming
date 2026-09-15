@@ -11,18 +11,32 @@
 .heroCopy p { margin: 0; }
 .heroTitle,.heroCopy { min-width: 0; }
 .heroGhost { position: absolute; z-index: -1; left: 49%; bottom: -1.6rem; color: transparent; -webkit-text-stroke: .0625rem rgba(255,255,255,.09); font: 400 clamp(8rem, 18vw, 20rem)/.7 var(--font-bebas-neue); letter-spacing: .03em; }
-.heroPlane { position: absolute; left: 62%; top: 39%; width: 6rem; aspect-ratio: 1; background: url("/plane-outline-white.png") center / contain no-repeat; opacity: .75; }
+.heroPlane { position: absolute; left: 62%; top: 30%; width: 6rem; aspect-ratio: 1; background: url("/plane-outline-white.png") center / contain no-repeat; opacity: .75; animation: planeFloat 4.5s ease-in-out infinite; }
 .explore { position: absolute; z-index: 20; left: 70%; bottom: -3.5rem; width: 7rem; height: 7rem; display: grid; place-items: center; border-radius: 50%; }
 .exploreRing { object-fit: contain; animation: exploreSpin 10s linear infinite; }
 .exploreArrow { position: relative; z-index: 1; width: 1.25rem; height: 1.25rem; object-fit: contain; }
 .explore:focus-visible { outline: .125rem solid white; outline-offset: .35rem; }
 @keyframes exploreSpin { to { transform: rotate(360deg); } }
+@keyframes planeFloat {
+  0%,100% { transform: translate3d(0,0,0) rotate(-1deg); }
+  50% { transform: translate3d(.4rem,-.65rem,0) rotate(2deg); }
+}
 
 .marquee { overflow: hidden; background: white; border-bottom: .0625rem solid #d8d8d4; color: black; padding: 2.1rem 0; }
 .marqueeTrack { width: max-content; display: flex; align-items: center; animation: marquee 32s linear infinite; }
 .marqueeTrack span { display: flex; align-items: center; gap: 3rem; margin-right: 3rem; font-family: var(--font-bebas-neue); font-size: clamp(1.8rem, 2.5vw, 3rem); line-height: 1; text-transform: uppercase; white-space: nowrap; }
 .marqueePlane { width: 2.75rem; height: 2.75rem; object-fit: contain; }
 @keyframes marquee { to { transform: translateX(-50%); } }
+
+.clientele { padding: clamp(6rem,10vw,10rem) clamp(1.25rem,4vw,4.75rem); background: #f7f7f4; }
+.clienteleHeading { display: grid; grid-template-columns: 1fr auto; align-items: end; margin-bottom: clamp(3rem,6vw,6rem); padding-bottom: 1.5rem; border-bottom: .0625rem solid #0a0a0a; }
+.clienteleHeading p { grid-column: 1 / -1; margin: 0 0 1rem; font: 600 .78rem/1 var(--font-work-sans); letter-spacing: .16em; text-transform: uppercase; }
+.clienteleHeading h2 { margin: 0; font: 400 clamp(5rem,10vw,11rem)/.78 var(--font-bebas-neue); text-transform: uppercase; }
+.clienteleHeading span { padding-bottom: .35rem; font: 500 clamp(1rem,1.5vw,1.4rem)/1 var(--font-work-sans); }
+.logoGrid { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); border-top: .0625rem solid #cbc8c1; border-left: .0625rem solid #cbc8c1; }
+.logoCard { position: relative; min-width: 0; aspect-ratio: 1.22; margin: 0; overflow: hidden; border-right: .0625rem solid #cbc8c1; border-bottom: .0625rem solid #cbc8c1; background: white; }
+.clientLogo { padding: clamp(.85rem,1.5vw,1.6rem); object-fit: contain; filter: grayscale(1); transition: transform .35s ease,filter .35s ease; }
+.logoCard:hover .clientLogo { transform: scale(1.06); filter: grayscale(0); }
 
 .principles { min-height: 85svh; padding: clamp(6rem, 11vw, 11rem) clamp(1.5rem, 8vw, 9rem); display: grid; grid-template-columns: repeat(3, 1fr); align-items: center; gap: clamp(3rem, 8vw, 9rem); background: #f7f7f4; }
 .principle { position: relative; }
@@ -37,6 +51,8 @@
 .fan { position: relative; width: min(100%, 24rem); height: 14rem; border-bottom: .0625rem solid black; }
 .fan i { position: absolute; bottom: 0; left: 50%; width: .0625rem; height: 13rem; background: #111; transform-origin: bottom; transform: rotate(calc((var(--i) - 6) * 6deg)); }
 .fan i:nth-child(1){--i:0}.fan i:nth-child(2){--i:1}.fan i:nth-child(3){--i:2}.fan i:nth-child(4){--i:3}.fan i:nth-child(5){--i:4}.fan i:nth-child(6){--i:5}.fan i:nth-child(7){--i:6}.fan i:nth-child(8){--i:7}.fan i:nth-child(9){--i:8}.fan i:nth-child(10){--i:9}.fan i:nth-child(11){--i:10}.fan i:nth-child(12){--i:11}.fan i:nth-child(13){--i:12}
+.reflectMark { position: absolute; right: -1rem; top: -2rem; width: clamp(6rem,9vw,9rem); color: var(--brand); transform: rotate(-7deg); }
+.reflectMark path { stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 
 .capsule { margin: clamp(4rem, 9vw, 9rem) clamp(1.25rem, 5vw, 6rem); min-height: 27rem; padding: 4rem clamp(2rem, 4vw, 5rem); border-radius: 16rem; background: var(--brand); color: white; display: grid; grid-template-columns: 7rem minmax(25rem, 1.3fr) minmax(18rem, .8fr) 7rem; align-items: center; gap: clamp(1.5rem, 3vw, 4rem); }
 .capsule h2 { margin: 0; font: 400 clamp(4rem, 6vw, 7rem)/.85 var(--font-bebas-neue); text-transform: uppercase; }
@@ -44,7 +60,7 @@
 .capsule strong { font-weight: 750; }
 .capsuleTriangle { color: white; }
 .triangle { display: block; width: 6rem; height: auto; flex: 0 0 auto; color: var(--brand); }
-.triangle path { stroke: currentColor; stroke-width: 2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.triangle path,.triangle circle { stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 
 .identity { position: relative; padding: clamp(5rem, 8vw, 8rem) clamp(1.5rem, 5vw, 6rem); display: grid; grid-template-columns: minmax(27rem, 1fr) minmax(24rem, .85fr); gap: clamp(4rem, 9vw, 10rem); background-color: #fafaf8; background-image: linear-gradient(#ececea .0625rem, transparent .0625rem), linear-gradient(90deg,#ececea .0625rem,transparent .0625rem); background-size: 2.5rem 2.5rem; align-items: start; }
 .identitySticky { position: sticky; top: 8rem; min-height: calc(100svh - 10rem); display: flex; flex-direction: column; justify-content: center; }
@@ -87,14 +103,17 @@
 .footerContact address { margin-top: .3rem; font-style: normal; }
 .footerDetails nav a,.footerContact a { text-underline-offset: .25rem; }
 .footerDetails nav a:hover,.footerDetails nav a:focus-visible,.footerContact a:hover,.footerContact a:focus-visible { text-decoration: underline; }
+.elementMarks { width: min(100%,34rem); margin: 0 0 clamp(3rem,5vw,5rem) auto; padding: clamp(1.5rem,3vw,2.5rem); border: 1px solid rgba(255,255,255,.35); border-radius: 50% 50% 1.25rem 1.25rem / 2rem 2rem 1.25rem 1.25rem; color: white; }
+.elementMarks path,.elementMarks circle { stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .footerBase { padding-top: 1.5rem; border-top: .0625rem solid rgba(255,255,255,.3); display: grid; grid-template-columns: 1fr 1fr 1fr; font: 400 .8rem/1.4 var(--font-work-sans); letter-spacing: .04rem; text-transform: uppercase; }
 .footerBase span:nth-child(2) { text-align: center; }
 .footerBase a { justify-self: end; }
 
 @media (max-width: 70rem) {
+  .logoGrid { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .hero { height: auto; min-height: 46rem; grid-template-columns: minmax(0,1fr); align-content: center; gap: 3rem; padding-top: 10rem; }
   .heroTitle h1 { white-space: normal; }
-  .heroPlane { display: none; }
+  .heroPlane { display: block; left: auto; right: 8%; top: 42%; width: 5.5rem; }
   .heroCopy { max-width: 36rem; }
   .heroGhost { left: 25%; }
   .explore { left: auto; right: 1.5rem; width: 6rem; height: 6rem; bottom: -3rem; }
@@ -114,6 +133,22 @@
   .aboutCta { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 48rem) {
+  .hero { padding-top: 13rem; }
+  .heroKicker {
+    top: 10rem;
+    max-width: calc(100% - 7.5rem);
+  }
+  .heroPlane {
+    left: auto;
+    right: 1.875rem;
+    top: 9.25rem;
+    bottom: auto;
+    width: clamp(4.5rem,12vw,5.25rem);
+    opacity: .9;
+  }
+}
+
 @media (max-width: 39.999rem) {
   .hero {
     min-height: 62rem;
@@ -123,10 +158,19 @@
     align-items: stretch;
     gap: 0;
   }
-  .hero::before,.heroPlane,.heroGhost,.explore { display: none; }
+  .hero::before,.heroGhost,.explore { display: none; }
+  .heroPlane {
+    display: block;
+    left: auto;
+    right: 1.875rem;
+    top: 9.25rem;
+    bottom: auto;
+    width: clamp(4.75rem, 18vw, 5.75rem);
+    opacity: .9;
+  }
   .heroKicker {
     position: static;
-    max-width: 16rem;
+    max-width: calc(100% - 6.5rem);
     font-size: 1rem;
     line-height: 1.5;
     letter-spacing: .24em;
@@ -153,6 +197,11 @@
   .heroCopy p { overflow-wrap: normal; }
   .heroCopy p + p { display: none; }
   .marquee { padding: 1.5rem 0; }
+  .clientele { padding-block: 5rem; }
+  .clienteleHeading h2 { font-size: clamp(4.5rem,22vw,6.5rem); }
+  .logoGrid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .logoCard { aspect-ratio: 1.18; }
+  .clientLogo { padding: .8rem; }
   .principles { padding: 5rem 1.5rem; }
   .principle h3 { font-size: clamp(4.2rem, 21vw, 6rem); }
   .challenge { padding: 6rem 1.5rem; }
@@ -176,9 +225,16 @@
   .footerBase { grid-template-columns: 1fr; gap: .75rem; }
   .footerBase span:nth-child(2) { text-align: left; }
   .footerBase a { justify-self: start; }
+  .elementMarks { width: 100%; margin-inline: 0; padding: 1.25rem; }
+}
+
+@media (max-width: 40.5rem) {
+  .heroPlane { width: clamp(3.5rem,13vw,4.25rem); }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .clientLogo { transition: none; }
   .marqueeTrack { animation-play-state: paused; }
   .exploreRing { animation: none; }
+  .heroPlane { animation: none; }
 }

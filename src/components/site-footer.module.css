@@ -16,6 +16,8 @@
 .footerContact address { margin: 0; font-style: normal; }
 .footerDetails nav a,.footerContact a { text-underline-offset: .25rem; }
 .footerDetails nav a:hover,.footerDetails nav a:focus-visible,.footerContact a:hover,.footerContact a:focus-visible { text-decoration: underline; }
+.elementMarks { width: min(100%,34rem); margin: 0 0 clamp(3rem,5vw,5rem) auto; padding: clamp(1.5rem,3vw,2.5rem); border: 1px solid rgba(255,255,255,.35); border-radius: 50% 50% 1.25rem 1.25rem / 2rem 2rem 1.25rem 1.25rem; color: white; }
+.elementMarks path,.elementMarks circle { stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .footerBase { padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.3); display: grid; grid-template-columns: 1fr 1fr 1fr; font: 400 .8rem/1.4 var(--font-work-sans); letter-spacing: .04rem; text-transform: uppercase; }
 .footerBase span:nth-child(2) { text-align: center; }
 .footerBase a { justify-self: end; }
@@ -36,4 +38,5 @@
   .footerBase { grid-template-columns: 1fr; gap: .75rem; }
   .footerBase span:nth-child(2) { text-align: left; }
   .footerBase a { justify-self: start; }
+  .elementMarks { width: 100%; margin-inline: 0; padding: 1.25rem; }
 }

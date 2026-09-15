@@ -9,7 +9,7 @@
 .heroBottom { display: grid; grid-template-columns: 1fr minmax(17rem,31rem); align-items: end; gap: 3rem; }
 .heroBottom p { margin: 0; font: 400 clamp(1.05rem,1.45vw,1.45rem)/1.45 var(--font-work-sans); }
 .triangle { display: block; height: auto; flex: 0 0 auto; }
-.triangle path { stroke: currentColor; stroke-width: 2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.triangle path,.triangle circle { stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .heroStar,.businessStar,.contactStar { width: clamp(5rem,8vw,8rem); color: white; }
 .legacy,.awareness,.physics,.process,.lines { padding: clamp(6rem,11vw,12rem) clamp(1.25rem,6vw,7rem); }
 .eyebrow { margin: 0 0 2rem; font: 600 .8rem/1.2 var(--font-work-sans); letter-spacing: .16em; text-transform: uppercase; }

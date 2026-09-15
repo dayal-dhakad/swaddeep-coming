@@ -109,7 +109,7 @@ export function SiteHeader() {
             <Link
               href={item.href}
               key={item.label}
-              className={`relative block font-bebas text-[3.11rem] leading-[3.056rem] font-bold  no-underline transition-[color,opacity,transform] duration-300 ease-linear hover:text-white focus-visible:text-white min-[781px]:text-[5.5rem] min-[781px]:leading-[5rem] ${isOpen ? "translate-y-0 opacity-100" : "-translate-y-6 opacity-0"}`}
+              className={`relative block whitespace-nowrap font-bebas text-[clamp(2.15rem,9vw,3.1rem)] leading-[.98] font-bold no-underline transition-[color,opacity,transform] duration-300 ease-linear hover:text-white focus-visible:text-white min-[781px]:text-[clamp(3.25rem,5.1vw,4.85rem)] min-[781px]:leading-[.94] ${isOpen ? "translate-y-0 opacity-100" : "-translate-y-6 opacity-0"}`}
               style={{
                 transitionDelay: isOpen ? `${280 + index * 55}ms` : "0ms",
               }}

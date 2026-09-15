@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { TriangleMark } from "@/components/triangle-mark";
 import styles from "./about.module.css";
 
 export const metadata: Metadata = {
@@ -55,20 +56,6 @@ const services = [
   "Invitation and Paper Printing",
 ];
 
-function Triangle({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      className={`${styles.triangle} ${className}`}
-      viewBox="0 0 96 96"
-      fill="none"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path d="M48 7 91 88H5L48 7Z" />
-    </svg>
-  );
-}
-
 export default function AboutPage() {
   return (
     <>
@@ -84,7 +71,7 @@ export default function AboutPage() {
             <h1 id="about-title">Swaddeep</h1>
           </div>
           <div className={styles.heroBottom}>
-            <Triangle className={styles.heroStar} />
+            <TriangleMark variant="explore" className={`${styles.triangle} ${styles.heroStar}`} />
             <p>
               We stand at the beginning with ambitious founders and breathe new
               life into established FMCG producers.
@@ -166,7 +153,7 @@ export default function AboutPage() {
         </section>
 
         <section className={styles.business} aria-labelledby="business-title">
-          <Triangle className={styles.businessStar} />
+          <TriangleMark variant="progress" className={`${styles.triangle} ${styles.businessStar}`} />
           <div>
             <p className={styles.eyebrow}>The commercial test</p>
             <h2 id="business-title">
@@ -310,7 +297,7 @@ export default function AboutPage() {
                 From the first strategic thought to the final printed piece.
               </p>
             </div>
-            <Triangle className={styles.servicesMark} />
+            <TriangleMark variant="express" className={`${styles.triangle} ${styles.servicesMark}`} />
           </div>
           <ol className={styles.linesTrack}>
             {services.map((service, index) => (
@@ -322,7 +309,7 @@ export default function AboutPage() {
             ))}
           </ol>
           <div className={styles.contactCta}>
-            <Triangle className={styles.contactStar} />
+            <TriangleMark variant="transition" className={`${styles.triangle} ${styles.contactStar}`} />
             <p>Ready to build a brand that lasts?</p>
             <Link href="mailto:swaddeep99@gmail.com">
               Start a conversation <span aria-hidden="true">↗</span>

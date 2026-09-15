@@ -1,5 +1,33 @@
 @import "tailwindcss";
 
+.element-mark-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(.35rem, 1.5vw, 1.4rem);
+}
+
+.element-mark-item {
+  display: grid;
+  justify-items: center;
+  gap: .65rem;
+  min-width: 0;
+}
+
+.element-mark-item svg { width: 100%; max-width: 6.5rem; height: auto; }
+.element-mark-item span {
+  font: 500 clamp(.56rem, 1vw, .9rem)/1 var(--font-work-sans);
+  letter-spacing: clamp(.03em, .35vw, .12em);
+  text-transform: uppercase;
+}
+
+.element-mark-statement {
+  margin: clamp(1.75rem, 3vw, 2.75rem) 0 0;
+  text-align: center;
+  font: 400 clamp(.82rem, 1.15vw, 1.05rem)/1.45 var(--font-work-sans);
+  letter-spacing: .02em;
+}
+
 :root {
   --background: #c4122f;
   --foreground: #ffffff;

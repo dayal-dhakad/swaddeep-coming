@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bebas_Neue, Geist, Geist_Mono, Work_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import { ComingSoon } from "@/components/coming-soon";
+import { seoKeywords } from "@/lib/seo-keywords";
 import "./globals.css";
 
 const showComingSoon = process.env.SHOW_COMING_SOON === "true";
@@ -41,6 +42,7 @@ export const metadata: Metadata = {
     template: "%s | Swaddeep",
   },
   description: "Swaddeep brand and packaging design studio.",
+  keywords: [...seoKeywords],
   robots: showComingSoon ? { index: false, follow: false } : undefined,
 };
 

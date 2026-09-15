@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./site-footer.module.css";
+import { ElementMarks } from "./triangle-mark";
 
 export function SiteFooter() {
   return (
@@ -44,6 +45,8 @@ export function SiteFooter() {
           </address>
         </div>
       </div>
+
+      <ElementMarks className={styles.elementMarks} />
 
       <div className={styles.footerBase}>
         <span>India</span>
