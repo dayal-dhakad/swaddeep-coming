@@ -43,6 +43,36 @@ const interests = [
   "Meditation, long walks & yoga",
 ];
 
+const principles = [
+  {
+    question: "Where does the real struggle begin?",
+    answer: "When a product has to communicate clearly on the founder’s behalf.",
+  },
+  {
+    question: "How do you understand a market?",
+    answer: "Spend qualitative time inside it—combining observation with intellect.",
+  },
+  {
+    question: "What should come before product design?",
+    answer:
+      "Clarity about the audience, launch region, price, purpose, and the market the product must enter.",
+  },
+  {
+    question: "Why can a well-designed product still fail?",
+    answer:
+      "Poor market knowledge, unsuitable packaging, weak materials, printing issues, or a failure to understand regional influence.",
+  },
+];
+
+const consultingFor = [
+  "Businesses moving from market entry to professional packaging",
+  "Brands reassessing packaging or positioning after unsuccessful attempts",
+  "Teams navigating copyright or intellectual-property concerns",
+  "Products requiring precise print and colour planning",
+  "Founders struggling to commit to a final name, identity, or artwork",
+  "Industrialists preparing an accelerated market launch",
+];
+
 export default function SwatiShobhaPage() {
   return (
     <>
@@ -130,6 +160,59 @@ export default function SwatiShobhaPage() {
               <span>01</span>
               <p>Goal: empower branding and business understanding in rural areas.</p>
             </article>
+          </div>
+        </section>
+
+        <section className={styles.method} aria-labelledby="method-title">
+          <div className={styles.methodIntro}>
+            <p className={styles.kicker}>Questions before answers</p>
+            <h2 id="method-title">Observe first. Design with context.</h2>
+            <p>
+              Her approach begins with an open conversation about the market,
+              not an elaborate description of the solution. The aim is to
+              replace visual guesswork with clarity about people, place, price,
+              and purpose.
+            </p>
+          </div>
+          <div className={styles.questionList}>
+            {principles.map((principle, index) => (
+              <article key={principle.question}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{principle.question}</h3>
+                  <p>{principle.answer}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.consulting} aria-labelledby="consulting-title">
+          <div className={styles.consultingHeading}>
+            <p className={styles.kicker}>Brand consultation</p>
+            <h2 id="consulting-title">Clarity before irreversible decisions.</h2>
+            <p>
+              Packaging and branding demand investment, time, instinct, market
+              understanding, and the ability to adapt. Dr. Swati’s consulting
+              practice is built around transparent discussion before those
+              decisions become costly to reverse.
+            </p>
+          </div>
+          <div className={styles.consultingPanel}>
+            <p>Consulting is designed for</p>
+            <ol>
+              {consultingFor.map((item, index) => (
+                <li key={item}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  {item}
+                </li>
+              ))}
+            </ol>
+            <p className={styles.consultingNote}>
+              Her portfolio describes a balance of professional strategy and
+              straight talk—helping clients understand market scenarios with
+              transparency and a clear course of action.
+            </p>
           </div>
         </section>
 
