@@ -29,7 +29,7 @@ export function SiteFooter() {
         <nav aria-label="Footer navigation">
           <p className={styles.groupLabel}>Explore</p>
           <Link href="/about">About</Link>
-          <Link href="#">About DR. Swati Shobha</Link>
+          <Link href="/swati-shobha">About DR. Swati Shobha</Link>
           <Link href="/about#what-we-do">What we do</Link>
           <Link href="/#work">Work</Link>
           <Link href="/#philosophy">Philosophy</Link>

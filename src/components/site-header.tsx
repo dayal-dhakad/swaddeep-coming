@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 const navigation = [
   { label: "About", href: "/about" },
-  { label: "About DR. Swati Shobha", href: "#" },
+  { label: "About DR. Swati Shobha", href: "/swati-shobha" },
   { label: "What we do", href: "/about#what-we-do" },
   { label: "Work", href: "/#work" },
   { label: "Philosophy", href: "/#philosophy" },
@@ -42,7 +42,7 @@ const socialLinks = [
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const isAboutPage = pathname === "/about";
+  const isAboutPage = pathname === "/about" || pathname === "/swati-shobha";
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
