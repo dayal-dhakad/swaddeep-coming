@@ -64,7 +64,7 @@ export default function AboutPage() {
         <section className={styles.hero} aria-labelledby="about-title">
           <div className={styles.heroTopline}>
             <span>Est. 12 years ago</span>
-            <span>Seoni · India</span>
+            <span>India</span>
           </div>
           <div className={styles.heroTitle}>
             <p>About</p>

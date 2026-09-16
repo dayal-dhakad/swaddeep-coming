@@ -7,6 +7,7 @@ import {
 } from "next/font/google";
 import localFont from "next/font/local";
 import { ComingSoon } from "@/components/coming-soon";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import { seoKeywords } from "@/lib/seo-keywords";
 import "./globals.css";
 
@@ -58,7 +59,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${workSans.variable} ${displayScript.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {showComingSoon ? <ComingSoon /> : children}
+        {showComingSoon ? (
+          <ComingSoon />
+        ) : (
+          <>
+            {children}
+            <WhatsAppButton />
+          </>
+        )}
       </body>
     </html>
   );

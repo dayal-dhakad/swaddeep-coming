@@ -25,7 +25,7 @@ const socialLinks = [
   },
   {
     label: "Instagram",
-    href: "#instagram",
+    href: "https://www.instagram.com/swaddeep_packaging/",
     icon: "/homepage/Instagram.png",
     width: 30,
     height: 30,
@@ -129,7 +129,13 @@ export function SiteHeader() {
           aria-label="Social links"
         >
           {socialLinks.map((social) => (
-            <a href={social.href} aria-label={social.label} key={social.label}>
+            <a
+              href={social.href}
+              aria-label={social.label}
+              key={social.label}
+              target={social.label === "Instagram" ? "_blank" : undefined}
+              rel={social.label === "Instagram" ? "noopener noreferrer" : undefined}
+            >
               <ImageKitImage
                 urlEndpoint="https://ik.imagekit.io/swaddeep"
                 src={social.icon}
@@ -140,6 +146,14 @@ export function SiteHeader() {
               />
             </a>
           ))}
+          <a
+            href="https://wa.me/message/4BRHRNCVOSPFK1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-work-sans text-sm text-white underline underline-offset-4"
+          >
+            WhatsApp
+          </a>
         </div>
       </div>
     </header>

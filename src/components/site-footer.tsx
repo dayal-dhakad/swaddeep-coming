@@ -41,6 +41,14 @@ export function SiteFooter() {
             <a href="tel:+919407053365">+91 9407053365</a>
             <br />
             <a href="mailto:swaddeep99@gmail.com">swaddeep99@gmail.com</a>
+            <br />
+            <a href="https://wa.me/message/4BRHRNCVOSPFK1" target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
+            <br />
+            <a href="https://www.instagram.com/swaddeep_packaging/" target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
           </address>
         </div>
       </div>

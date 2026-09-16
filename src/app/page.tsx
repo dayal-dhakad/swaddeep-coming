@@ -331,24 +331,28 @@ export default function Home() {
           <div className={styles.clienteleHeading}>
             <p>Selected collaborations</p>
             <h2 id="clientele-title">Our clientele</h2>
-            {/* <span aria-hidden="true">33</span> */}
           </div>
-          <div className={styles.logoGrid}>
-            {clientLogos.map((img, index) => (
-              <figure
-                className={styles.logoCard}
-                key={`${img?.title}-${index}`}
-              >
+          <div
+            className={styles.logoGrid}
+            role="region"
+            aria-label="Client logos. Scroll horizontally to see all clients."
+            tabIndex={0}
+          >
+            {clientLogos.map((img) => (
+              <figure className={styles.logoCard} key={img.title}>
                 <Image
                   src={img?.image}
                   alt={img?.title}
                   fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1120px) 33vw, 17vw"
+                  sizes="(max-width: 640px) 120px, (max-width: 1120px) 160px, 208px"
                   className={styles.clientLogo}
                 />
               </figure>
             ))}
           </div>
+          <p className={styles.clienteleHint}>
+            Scroll sideways to explore <span aria-hidden="true">↔</span>
+          </p>
         </section>
 
         <ContactForm />
@@ -382,18 +386,22 @@ export default function Home() {
             <a href="#work">Work</a>
             <a href="#philosophy">Philosophy</a>
           </nav>
-          {/* <div className={styles.footerContact}>
+          <div className={styles.footerContact}>
             <span>Contact</span>
             <address>
-              Behind Corp Bank, Barapatthar,
-              <br />
-              Seoni - 480661 (M.P)
-              <br />
               <a href="tel:+919407053365">+91 9407053365</a>
               <br />
               <a href="mailto:swaddeep99@gmail.com">swaddeep99@gmail.com</a>
+              <br />
+              <a href="https://wa.me/message/4BRHRNCVOSPFK1" target="_blank" rel="noopener noreferrer">
+                WhatsApp
+              </a>
+              <br />
+              <a href="https://www.instagram.com/swaddeep_packaging/" target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a>
             </address>
-          </div> */}
+          </div>
         </div>
 
         {/* Element symbols temporarily hidden. */}
