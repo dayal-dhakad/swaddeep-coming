@@ -7,7 +7,7 @@ import {
 } from "next/font/google";
 import localFont from "next/font/local";
 import { ComingSoon } from "@/components/coming-soon";
-import { WhatsAppButton } from "@/components/whatsapp-button";
+import { SiteIntro } from "@/components/site-intro";
 import { seoKeywords } from "@/lib/seo-keywords";
 import "./globals.css";
 
@@ -63,8 +63,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <ComingSoon />
         ) : (
           <>
+            <SiteIntro />
             {children}
-            <WhatsAppButton />
           </>
         )}
       </body>

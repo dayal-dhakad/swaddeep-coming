@@ -1,60 +1,51 @@
 import Image from "next/image";
-import Link from "next/link";
+import { SiInstagram, SiWhatsapp } from "react-icons/si";
+import { FooterNavigation } from "./footer-navigation";
 import styles from "./site-footer.module.css";
 
 export function SiteFooter() {
   return (
-    <footer className={styles.footer} id="contact">
-      <div className={styles.footerLead}>
-        <p>Have something meaningful in mind?</p>
-        <h2>Let your design</h2>
-        <a href="mailto:swaddeep99@gmail.com">
-          <span>speak</span>
-          <i aria-hidden="true">↗</i>
-        </a>
-      </div>
-
+    <footer className={styles.footer} id="site-footer">
       <div className={styles.footerDetails}>
         <div className={styles.footerIdentity}>
           <Image
-            src="https://ik.imagekit.io/swaddeep/homepage/download.png"
-            alt="Swaddeep"
-            width={1937}
-            height={812}
-            sizes="(max-width: 768px) 12rem, 16rem"
+            src="/plane-outline-white.png"
+            alt="Outline paper plane"
+            width={1254}
+            height={1254}
+            sizes="(max-width: 768px) 6rem, 8rem"
             className={styles.footerLogo}
           />
           <span>Brand identity &amp; packaging</span>
         </div>
-        <nav aria-label="Footer navigation">
-          <p className={styles.groupLabel}>Explore</p>
-          <Link href="/about">About</Link>
-          <Link href="/swati-shobha">About DR. Swati Shobha</Link>
-          <Link href="/about#what-we-do">What we do</Link>
-          <Link href="/#work">Work</Link>
-          <Link href="/#philosophy">Philosophy</Link>
-          <Link href="/#contact">Contact</Link>
-        </nav>
+        <FooterNavigation groupLabelClassName={styles.groupLabel} />
         <div className={styles.footerContact}>
           <p className={styles.groupLabel}>Contact</p>
           <address>
             <a href="tel:+919407053365">+91 9407053365</a>
             <br />
             <a href="mailto:swaddeep99@gmail.com">swaddeep99@gmail.com</a>
-            <br />
-            <a href="https://wa.me/message/4BRHRNCVOSPFK1" target="_blank" rel="noopener noreferrer">
-              WhatsApp
-            </a>
-            <br />
-            <a href="https://www.instagram.com/swaddeep_packaging/" target="_blank" rel="noopener noreferrer">
-              Instagram
-            </a>
           </address>
+          <div className={styles.socialLinks}>
+            <a
+              href="https://www.instagram.com/swaddeep_packaging/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <SiInstagram size={26} aria-hidden="true" />
+            </a>
+            <a
+              href="https://wa.me/message/4BRHRNCVOSPFK1"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <SiWhatsapp size={26} aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </div>
-
-      {/* Element symbols temporarily hidden. */}
-      {/* <ElementMarks className={styles.elementMarks} /> */}
 
       <div className={styles.footerBase}>
         <span>India</span>

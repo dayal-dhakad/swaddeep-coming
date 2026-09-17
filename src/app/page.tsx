@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import localFont from "next/font/local";
 import { HeroSlider } from "@/components/hero-slider";
 import { SiteHeader } from "@/components/site-header";
 import { ContactForm } from "@/components/contact-form";
+import { SiteFooter } from "@/components/site-footer";
 import { TriangleMark } from "@/components/triangle-mark";
 import styles from "./page.module.css";
+
+const loverine = localFont({
+  src: "./fonts/Loverine.otf",
+  variable: "--font-loverine",
+  weight: "400",
+  style: "normal",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Swaddeep",
@@ -99,7 +109,7 @@ export default function Home() {
       <main className={styles.page} id="top">
         <section className={styles.hero} aria-labelledby="home-title">
           <p className={styles.heroKicker}>
-            Brand identity · Packaging · Communication
+            Brand identity · Packaging · Marcom
           </p>
           <div className={styles.heroTitle}>
             <p>Designs speak</p>
@@ -169,11 +179,12 @@ export default function Home() {
         </section>
 
         <section className={styles.challenge} aria-labelledby="challenge-title">
-          <div className={styles.challengeMark} aria-hidden="true">
+          <div className={styles.challengeMark}>
             <TriangleMark
               variant="progress"
               className={styles.challengeMarkSymbol}
             />
+            <span className={styles.challengeMarkLabel}>Progress</span>
           </div>
           <div className={styles.challengeCopy}>
             <h2 id="challenge-title">
@@ -238,7 +249,7 @@ export default function Home() {
               <br />
               &amp; packaging
             </h2>
-            <p>Designed to communicate</p>
+            <p>Designed to Communicate</p>
           </div>
           <div className={styles.identityDetails}>
             <article>
@@ -253,9 +264,9 @@ export default function Home() {
                 believe into something people can see, feel and remember.
               </p>
               <ul>
-                <li>Purpose &amp; positioning</li>
-                <li>Visual identity</li>
-                <li>Brand language</li>
+                <li>Purpose &amp; Positioning</li>
+                <li>Visual Identity</li>
+                <li>Brand Language</li>
               </ul>
             </article>
             <article>
@@ -271,9 +282,9 @@ export default function Home() {
                 markets, resisting piracy and balancing sales with aesthetics.
               </p>
               <ul>
-                <li>FMCG packaging</li>
-                <li>Market communication</li>
-                <li>Distinctive shelf presence</li>
+                <li>FMCG Packaging</li>
+                <li>Market Communication</li>
+                <li>Distinctive Shelf Presence</li>
               </ul>
             </article>
             <article>
@@ -288,7 +299,7 @@ export default function Home() {
                 central to our process. When a strong product is not accepted, a
                 design glitch may be creating a communication gap.
               </p>
-              <p className={styles.pullQuote}>
+              <p className={`${styles.pullQuote} ${loverine.variable}`}>
                 “Bad packaging is like an attractive face with a missing tooth.”
               </p>
             </article>
@@ -358,68 +369,7 @@ export default function Home() {
         <ContactForm />
       </main>
 
-      <footer className={styles.footer} id="site-footer">
-        {/* <div className={styles.footerLead}>
-          <p>Have something meaningful in mind?</p>
-          <h2>Let your design</h2>
-          <a href="mailto:swaddeep99@gmail.com">
-            <span>speak</span>
-            <i aria-hidden="true">↗</i>
-          </a>
-        </div> */}
-
-        <div className={styles.footerDetails}>
-          <div className={styles.footerIdentity}>
-            <Image
-              src="https://ik.imagekit.io/swaddeep/homepage/download.png"
-              alt="Swaddeep"
-              width={1937}
-              height={812}
-              sizes="(max-width: 768px) 12rem, 16rem"
-              className={styles.footerLogo}
-            />
-            <span>Brand identity &amp; packaging</span>
-          </div>
-          <nav aria-label="Footer navigation">
-            <Link href="/about">About</Link>
-            <a href="#what-we-do">What we do</a>
-            <a href="#work">Work</a>
-            <a href="#philosophy">Philosophy</a>
-          </nav>
-          <div className={styles.footerContact}>
-            <span>Contact</span>
-            <address>
-              <a href="tel:+919407053365">+91 9407053365</a>
-              <br />
-              <a href="mailto:swaddeep99@gmail.com">swaddeep99@gmail.com</a>
-              <br />
-              <a href="https://wa.me/message/4BRHRNCVOSPFK1" target="_blank" rel="noopener noreferrer">
-                WhatsApp
-              </a>
-              <br />
-              <a href="https://www.instagram.com/swaddeep_packaging/" target="_blank" rel="noopener noreferrer">
-                Instagram
-              </a>
-            </address>
-          </div>
-        </div>
-
-        {/* Element symbols temporarily hidden. */}
-        {/* <ElementMarks className={styles.elementMarks} /> */}
-
-        <div className={styles.footerBase}>
-          <span>India</span>
-          <span>© {new Date().getFullYear()} Swaddeep</span>
-          <a href="#top">Back to top ↑</a>
-        </div>
-
-        <p className={styles.legalNotice}>
-          All the copyrights of clientele artwork are reserved with respective
-          associates. Reproducing or imitating them for business allows our
-          associates to take legal action. None of the copyrights are with
-          Swaddeep. Swaddeep is displaying the catalogue via this website.
-        </p>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

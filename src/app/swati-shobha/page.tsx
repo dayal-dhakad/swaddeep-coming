@@ -35,22 +35,16 @@ const education = [
   },
 ];
 
-const interests = [
-  "World cinema",
-  "Creative writing & poetry",
-  "10 m air-pistol shooting",
-  "Swimming & weight lifting",
-  "Meditation, long walks & yoga",
-];
-
 const principles = [
   {
     question: "Where does the real struggle begin?",
-    answer: "When a product has to communicate clearly on the founder’s behalf.",
+    answer:
+      "When a product has to communicate clearly on the founder’s behalf.",
   },
   {
     question: "How do you understand a market?",
-    answer: "Spend qualitative time inside it—combining observation with intellect.",
+    answer:
+      "Spend qualitative time inside it—combining observation with intellect.",
   },
   {
     question: "What should come before product design?",
@@ -64,13 +58,21 @@ const principles = [
   },
 ];
 
+const consultingClients = [
+  "Swadeep Edible Oil",
+  "Gangwal",
+  "Shree Ganesh Besan Mill",
+  "GBM",
+  "SGT",
+];
+
 const consultingFor = [
-  "Businesses moving from market entry to professional packaging",
-  "Brands reassessing packaging or positioning after unsuccessful attempts",
-  "Teams navigating copyright or intellectual-property concerns",
-  "Products requiring precise print and colour planning",
-  "Founders struggling to commit to a final name, identity, or artwork",
-  "Industrialists preparing an accelerated market launch",
+  "Businesses already in the market but new to packaging",
+  "Brands whose packaging or rebranding has not worked",
+  "Teams facing copyright disputes with rivals",
+  "Products needing cylinder and colour planning",
+  "Founders choosing a final name and logo",
+  "Industrialists launching late in a competitive market",
 ];
 
 export default function SwatiShobhaPage() {
@@ -86,17 +88,25 @@ export default function SwatiShobhaPage() {
               <strong>Shobha</strong>
             </h1>
             <p className={styles.intro}>
-              A multidisciplinary thinker shaping regional brands with
-              research, language, culture, and commercial clarity.
+              A multidisciplinary thinker shaping regional brands with research,
+              language, culture, and commercial clarity.
             </p>
-            <a className={styles.scrollCue} href="#story">
-              <span>Discover her story</span>
-              <i aria-hidden="true">↓</i>
-            </a>
+            <blockquote className={styles.heroQuote}>
+              <p>
+                I welcome you to take the <em>next flight</em> of your brand
+                with Swaddeep. Strategies of the market are built in the brain
+                and not in the market. Let us build something really creative
+                and strongest for you.
+              </p>
+              <footer>
+                <cite>Dr. Swati Shobha Sevlani</cite>
+                <span>Ph.D. in Advertising</span>
+              </footer>
+            </blockquote>
           </div>
 
           <div className={styles.portraitWrap}>
-            <span className={styles.index}>01 / Portrait</span>
+            {/* <span className={styles.index}>01 / Portrait</span> */}
             <Image
               src="/swati-shobha/dr-swati-portrait.png"
               alt="Illustrated portrait of Dr. Swati Shobha holding a cup and tablet"
@@ -119,7 +129,11 @@ export default function SwatiShobhaPage() {
           </p>
         </section>
 
-        <section className={styles.story} id="story" aria-labelledby="story-title">
+        <section
+          className={styles.story}
+          id="story"
+          aria-labelledby="story-title"
+        >
           <div className={styles.sectionLabel}>
             <span>02</span>
             <p>Being an entrepreneur</p>
@@ -139,27 +153,6 @@ export default function SwatiShobhaPage() {
                 helping local and regional entrepreneurs take their next flight.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section className={styles.impact} aria-labelledby="impact-title">
-          <div className={styles.impactLead}>
-            <p className={styles.kicker}>Work with consequence</p>
-            <h2 id="impact-title">Creative work, grounded in real markets.</h2>
-          </div>
-          <div className={styles.impactGrid}>
-            <article>
-              <span>100+</span>
-              <p>Edible-oil projects referenced in the portfolio.</p>
-            </article>
-            <article>
-              <span>2014</span>
-              <p>The year her entrepreneurial journey at Swaddeep began.</p>
-            </article>
-            <article>
-              <span>01</span>
-              <p>Goal: empower branding and business understanding in rural areas.</p>
-            </article>
           </div>
         </section>
 
@@ -187,32 +180,77 @@ export default function SwatiShobhaPage() {
           </div>
         </section>
 
-        <section className={styles.consulting} aria-labelledby="consulting-title">
-          <div className={styles.consultingHeading}>
-            <p className={styles.kicker}>Brand consultation</p>
-            <h2 id="consulting-title">Clarity before irreversible decisions.</h2>
-            <p>
-              Packaging and branding demand investment, time, instinct, market
-              understanding, and the ability to adapt. Dr. Swati’s consulting
-              practice is built around transparent discussion before those
-              decisions become costly to reverse.
-            </p>
-          </div>
-          <div className={styles.consultingPanel}>
-            <p>Consulting is designed for</p>
-            <ol>
-              {consultingFor.map((item, index) => (
-                <li key={item}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  {item}
-                </li>
-              ))}
-            </ol>
-            <p className={styles.consultingNote}>
-              Her portfolio describes a balance of professional strategy and
-              straight talk—helping clients understand market scenarios with
-              transparency and a clear course of action.
-            </p>
+        <section
+          className={styles.consulting}
+          id="consulting"
+          aria-labelledby="consulting-title"
+        >
+          <div className={styles.consultingTop}>
+            <div className={styles.consultingPortrait}>
+              <Image
+                src="/swati-shobha/dr-swati-consultant.png"
+                alt="Illustration of Dr. Swati Shobha in a dark blazer, gesturing beside paper planes"
+                width={1086}
+                height={1448}
+                sizes="(max-width: 760px) 100vw, 38vw"
+              />
+            </div>
+            <div className={styles.consultingNarrative}>
+              <div className={styles.consultingLead}>
+                <p className={styles.kicker}>Being a brand consultant</p>
+                <h2 id="consulting-title">The Soya Queen of packaging.</h2>
+                <p>
+                  Dr. Swati Sevlani is known as the Soya Queen for her soybean
+                  oil packaging work across Madhya Pradesh.
+                </p>
+                <p className={styles.consultingMetric}>
+                  <strong>100+</strong>
+                  <span>soybean oil brands with packaging designed in Madhya Pradesh</span>
+                </p>
+              </div>
+
+              <div className={styles.consultingBrands}>
+                <p className={styles.kicker}>FMCG consulting</p>
+                <h3>Brands behind the brief.</h3>
+                <ul>
+                  {consultingClients.map((client, index) => (
+                    <li key={client}>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <span>{client}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className={styles.consultingPractice}>
+                <p className={styles.kicker}>Consulting with clarity</p>
+                <h3>Before the next move.</h3>
+                <p>
+                  Packaging and branding involve investment, time and instinct.
+                  Understanding the market and adapting to competition call for
+                  transparent, open-ended discussion.
+                </p>
+                <p>
+                  As founder of Swaddeep, Dr. Swati also consults on rural
+                  market segmentation.
+                </p>
+                <div className={styles.consultingPracticeList}>
+                  <h4>Consultation is for</h4>
+                  <ol>
+                    {consultingFor.map((item, index) => (
+                      <li key={item}>
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+                <p className={styles.consultingNote}>
+                  The work brings clarity to market requirements, direction and
+                  the details missing from a branding process.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -238,42 +276,6 @@ export default function SwatiShobhaPage() {
               </li>
             ))}
           </ol>
-        </section>
-
-        <section className={styles.outside} aria-labelledby="outside-title">
-          <div className={styles.outsideTitle}>
-            <p className={styles.kicker}>Beyond the studio</p>
-            <h2 id="outside-title">Curiosity has many forms.</h2>
-          </div>
-          <div className={styles.outsideGrid}>
-            <article className={styles.languageCard}>
-              <span>Languages</span>
-              <h3>Hindi, Sindhi & English</h3>
-              <p>Speaks all three; writes in Hindi and English.</p>
-            </article>
-            <article className={styles.interestsCard}>
-              <span>Interests</span>
-              <ul>
-                {interests.map((interest) => <li key={interest}>{interest}</li>)}
-              </ul>
-            </article>
-            <article className={styles.wordsCard}>
-              <span>Words & publishing</span>
-              <h3>Research papers and two anthologies.</h3>
-              <p>
-                A regular participant in national conferences and workshops;
-                co-author of <em>Gestures</em> and <em>InkLinks</em>.
-              </p>
-            </article>
-            <article className={styles.communityCard}>
-              <span>Community</span>
-              <h3>Ideas must move beyond the page.</h3>
-              <p>
-                Her portfolio records blood-donation initiatives in Seoni,
-                including the women’s blood-donation awareness campaign.
-              </p>
-            </article>
-          </div>
         </section>
 
         <section className={styles.closing} aria-labelledby="closing-title">

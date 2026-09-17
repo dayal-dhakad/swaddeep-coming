@@ -1,10 +1,9 @@
 "use client";
 
-import { Image as ImageKitImage } from "@imagekit/next";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { SiInstagram, SiWhatsapp } from "react-icons/si";
 
 const navigation = [
   { label: "About", href: "/about" },
@@ -15,34 +14,8 @@ const navigation = [
   { label: "Contact", href: "/#contact" },
 ];
 
-const socialLinks = [
-  {
-    label: "LinkedIn",
-    href: "#linkedin",
-    icon: "/homepage/Linkedin.png",
-    width: 30,
-    height: 30,
-  },
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/swaddeep_packaging/",
-    icon: "/homepage/Instagram.png",
-    width: 30,
-    height: 30,
-  },
-  {
-    label: "Facebook",
-    href: "#facebook",
-    icon: "/homepage/Facebook.png",
-    width: 15,
-    height: 30,
-  },
-];
-
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
-  const isAboutPage = pathname === "/about" || pathname === "/swati-shobha";
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -75,7 +48,7 @@ export function SiteHeader() {
           className="hidden h-[2.11rem] w-[5.44rem] items-center justify-center rounded-[1.94rem] border-[0.06rem] border-solid border-white bg-transparent font-work-sans text-[0.78rem] leading-[1.11rem] font-normal text-white no-underline not-italic transition-colors duration-200 hover:bg-white hover:text-brand focus-visible:bg-white focus-visible:text-brand min-[781px]:flex"
           href="/#contact"
         >
-          Let&apos;s talk
+          Hola!
         </Link>
         <button
           className="relative h-13 w-[clamp(2.8rem,11.8vw,4.25rem)] shrink-0 cursor-pointer border-0 bg-transparent p-0 text-white min-[781px]:h-12.5 min-[781px]:w-[clamp(2.8rem,3.6vw,3.55rem)]"
@@ -99,7 +72,7 @@ export function SiteHeader() {
 
       <div
         id="site-menu"
-        className={`fixed inset-0 z-[101] flex flex-col items-start justify-start overflow-auto px-[clamp(1.25rem,4vw,4.7rem)] pt-[clamp(8.25rem,12vw,10rem)] pb-[clamp(2rem,5vh,4rem)] transition-[transform,opacity,visibility] duration-650 ease-[cubic-bezier(0.77,0,0.18,1)] ${isAboutPage ? "bg-black" : "bg-brand"} ${isOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-full opacity-0"}`}
+        className={`fixed inset-0 z-[101] flex flex-col items-start justify-start overflow-auto bg-brand px-[clamp(1.25rem,4vw,4.7rem)] pt-[clamp(8.25rem,12vw,10rem)] pb-[clamp(2rem,5vh,4rem)] transition-[transform,opacity,visibility] duration-650 ease-[cubic-bezier(0.77,0,0.18,1)] ${isOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-full opacity-0"}`}
       >
         <nav
           className="flex flex-col items-start"
@@ -124,37 +97,29 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div
-          className="mt-auto flex items-center gap-[clamp(1.5rem,3vw,3.5rem)] pt-8 pb-4"
+        <nav
+          className="mt-auto flex flex-wrap items-center gap-3 pt-8 pb-4"
           aria-label="Social links"
         >
-          {socialLinks.map((social) => (
-            <a
-              href={social.href}
-              aria-label={social.label}
-              key={social.label}
-              target={social.label === "Instagram" ? "_blank" : undefined}
-              rel={social.label === "Instagram" ? "noopener noreferrer" : undefined}
-            >
-              <ImageKitImage
-                urlEndpoint="https://ik.imagekit.io/swaddeep"
-                src={social.icon}
-                alt=""
-                width={social.width}
-                height={social.height}
-                className="max-w-[30px] object-contain"
-              />
-            </a>
-          ))}
+          <a
+            href="https://www.instagram.com/swaddeep_packaging/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="grid size-12 place-items-center rounded-full border border-white/60 text-white transition-colors hover:bg-white hover:text-brand focus-visible:bg-white focus-visible:text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            <SiInstagram size={26} aria-hidden="true" />
+          </a>
           <a
             href="https://wa.me/message/4BRHRNCVOSPFK1"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-work-sans text-sm text-white underline underline-offset-4"
+            aria-label="WhatsApp"
+            className="grid size-12 place-items-center rounded-full border border-white/60 text-white transition-colors hover:bg-white hover:text-brand focus-visible:bg-white focus-visible:text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
-            WhatsApp
+            <SiWhatsapp size={26} aria-hidden="true" />
           </a>
-        </div>
+        </nav>
       </div>
     </header>
   );

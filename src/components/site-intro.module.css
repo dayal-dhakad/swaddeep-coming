@@ -1,0 +1,64 @@
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: #c4122f;
+  transition: opacity 550ms ease;
+}
+
+.leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.plane {
+  width: clamp(120px, 18vw, 220px);
+  height: auto;
+  animation: glide 2.3s cubic-bezier(.45, 0, .55, 1) both,
+    appear 300ms ease-out both;
+}
+
+.progress {
+  display: block;
+  width: 96px;
+  height: 1px;
+  overflow: hidden;
+  background: rgb(255 255 255 / 35%);
+}
+
+.progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transform-origin: left;
+  animation: fill 2.3s linear both;
+}
+
+@keyframes glide {
+  from { transform: translate(-32px, 18px) rotate(-7deg); }
+  to { transform: translate(36px, -22px) rotate(6deg); }
+}
+
+@keyframes appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro { display: none; }
+}
