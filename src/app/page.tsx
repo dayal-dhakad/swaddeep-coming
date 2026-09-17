@@ -139,6 +139,9 @@ export default function Home() {
 
         <div id="work">
           <HeroSlider />
+          <Link className={styles.workLink} href="/work">
+            Explore Work <span aria-hidden="true">↗</span>
+          </Link>
         </div>
 
         <section className={styles.marquee} aria-label="Swaddeep capabilities">
@@ -150,7 +153,7 @@ export default function Home() {
               >
                 {item}
                 <Image
-                  src="/icon.png"
+                  src="/paper-plane.svg"
                   alt=""
                   width={44}
                   height={44}

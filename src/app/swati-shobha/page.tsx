@@ -12,49 +12,47 @@ export const metadata: Metadata = {
     "Meet Dr. Swati Shobha, founder and brand consultant at Swaddeep, and explore the education, ideas, and experiences behind her work.",
 };
 
-const education = [
-  {
-    year: "2018—2022",
-    degree: "Ph.D. in Advertising",
-    place: "Department of Mass Communication, Renaissance University, Indore",
-  },
-  {
-    year: "2013—2015",
-    degree: "M.A. in English Literature",
-    place: "RDVV, Jabalpur · PG College, Seoni",
-  },
-  {
-    year: "2009—2011",
-    degree: "M.A. in Mass Communication",
-    place: "School of Journalism, DAVV, Indore",
-  },
-  {
-    year: "2006—2009",
-    degree: "B.Sc. in Biotech & Bioinformatics",
-    place: "Mata Gujari College, DAVV, Indore",
-  },
-];
-
-const principles = [
+const questions = [
   {
     question: "Where does the real struggle begin?",
-    answer:
-      "When a product has to communicate clearly on the founder’s behalf.",
+    answer: ["It begins when our product starts communicating on our behalf."],
   },
   {
-    question: "How do you understand a market?",
-    answer:
-      "Spend qualitative time inside it—combining observation with intellect.",
+    question: "How do you choose the right agency?",
+    answer: [
+      "The right agency will not leave you confused with too many options. It will offer a clear solution and design for the market you want to reach.",
+    ],
   },
   {
-    question: "What should come before product design?",
-    answer:
-      "Clarity about the audience, launch region, price, purpose, and the market the product must enter.",
+    question: "How do you understand the market?",
+    answer: [
+      "Be part of it for quality time. No one learns a market in a few weeks. Get in sync with it.",
+    ],
   },
   {
-    question: "Why can a well-designed product still fail?",
-    answer:
-      "Poor market knowledge, unsuitable packaging, weak materials, printing issues, or a failure to understand regional influence.",
+    question: "How do you begin with product designing?",
+    answer: [
+      "Begin with clarity about your target audience, launch region, and product price. These help you understand how to brand it and plan its marketing communication. An associate should know why, when, where, how, and what about the product.",
+    ],
+  },
+  {
+    question: "How about using AI instead of hiring an agency?",
+    answer: [
+      "Bingo! Go ahead. Put a few prompts into AI and other software and apps. They do not understand the market, darling. New tools will keep coming, but they can divert us from the authenticity of artists and creative minds. They are not roadmaps or signboards; beware of instant gratification that pulls you away from the goal.",
+    ],
+  },
+  {
+    question: "How do you become popular without relying on marketing?",
+    answer: [
+      "Write your story. Everyone is a story. People want to know how you came up with your ideas, not only what those ideas and products are.",
+    ],
+  },
+  {
+    question: "What about failures after branding and packaging design?",
+    answer: [
+      "There can be many reasons. A client once applied strategies from abroad to a regional market and wanted pastel shades in a small town. It failed. To help people accept your strategies, make a place in their hearts. Listen to your consumers, then gradually bring them with you.",
+      "Market research can feel like diving into the Pacific Ocean for a pearl or blasting through coal mines for one diamond. Even leading companies have failed after decent packaging. Packaging is like clothing: sometimes you buy the wrong outfit and never wear it. The same can happen to your product. Relax, learn from it, and work toward better sales.",
+    ],
   },
 ];
 
@@ -121,12 +119,23 @@ export default function SwatiShobhaPage() {
           <TriangleMark variant="progress" className={styles.heroMark} />
         </section>
 
-        <section className={styles.statement} aria-label="Guiding belief">
-          <p className={styles.kicker}>Her point of view</p>
-          <p className={styles.statementLine}>
-            Building regional brands with the clarity to become
-            <em> visible.</em>
-          </p>
+        <section className={styles.statement} aria-labelledby="statement-title">
+          <div className={styles.statementContent}>
+            <p className={styles.kicker}>A layered education</p>
+            <h2 className={styles.statementLine} id="statement-title">
+              Science.<br />Story.<br /><span>Strategy.</span>
+            </h2>
+            <p className={styles.statementCopy}>
+              Her academic path moves between biotechnology, mass communication,
+              literature, and advertising—an unusual combination that informs how
+              she reads both products and people.
+            </p>
+          </div>
+          <div className={styles.statementVisual} aria-hidden="true">
+            <span className={styles.statementOrbit} />
+            <TriangleMark variant="combine" className={styles.statementSymbol} />
+            <span className={styles.statementVisualDot} />
+          </div>
         </section>
 
         <section
@@ -156,30 +165,6 @@ export default function SwatiShobhaPage() {
           </div>
         </section>
 
-        <section className={styles.method} aria-labelledby="method-title">
-          <div className={styles.methodIntro}>
-            <p className={styles.kicker}>Questions before answers</p>
-            <h2 id="method-title">Observe first. Design with context.</h2>
-            <p>
-              Her approach begins with an open conversation about the market,
-              not an elaborate description of the solution. The aim is to
-              replace visual guesswork with clarity about people, place, price,
-              and purpose.
-            </p>
-          </div>
-          <div className={styles.questionList}>
-            {principles.map((principle, index) => (
-              <article key={principle.question}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3>{principle.question}</h3>
-                  <p>{principle.answer}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
         <section
           className={styles.consulting}
           id="consulting"
@@ -205,7 +190,9 @@ export default function SwatiShobhaPage() {
                 </p>
                 <p className={styles.consultingMetric}>
                   <strong>100+</strong>
-                  <span>soybean oil brands with packaging designed in Madhya Pradesh</span>
+                  <span>
+                    soybean oil brands with packaging designed in Madhya Pradesh
+                  </span>
                 </p>
               </div>
 
@@ -254,33 +241,36 @@ export default function SwatiShobhaPage() {
           </div>
         </section>
 
-        <section className={styles.education} aria-labelledby="education-title">
-          <div className={styles.educationIntro}>
-            <p className={styles.kicker}>A layered education</p>
-            <h2 id="education-title">Science. Story. Strategy.</h2>
-            <p>
-              Her academic path moves between biotechnology, mass communication,
-              literature, and advertising—an unusual combination that informs
-              how she reads both products and people.
-            </p>
+        <section className={styles.qa} aria-labelledby="qa-title">
+          <div className={styles.qaIntro}>
+            <p className={styles.kicker}>In conversation</p>
+            <h2 id="qa-title">Namaste!</h2>
+            <div className={styles.qaMotif} aria-hidden="true">
+              <TriangleMark variant="progress" className={styles.qaMotifMark} />
+            </div>
           </div>
-          <ol className={styles.educationList}>
-            {education.map((item, index) => (
-              <li key={item.degree}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <p>{item.year}</p>
-                  <h3>{item.degree}</h3>
-                  <p>{item.place}</p>
+          <div className={styles.qaList}>
+            {questions.map((item, index) => (
+              <details name="swati-questions" open={index === 0} key={item.question}>
+                <summary>
+                  <span>{item.question}</span>
+                  <span className={styles.qaIcon} aria-hidden="true">+</span>
+                </summary>
+                <div className={styles.qaAnswer}>
+                  {item.answer.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                 </div>
-              </li>
+              </details>
             ))}
-          </ol>
+          </div>
         </section>
 
         <section className={styles.closing} aria-labelledby="closing-title">
-          <p>Meet the studio her thinking shaped.</p>
-          <h2 id="closing-title">From an igniting idea to a glowing era.</h2>
+          <p>Her point of view</p>
+          <h2 id="closing-title">
+            Building regional brands<br />
+            with the clarity to become
+            <em>visible.</em>
+          </h2>
           <Link href="/about">
             Explore Swaddeep <span aria-hidden="true">↗</span>
           </Link>
