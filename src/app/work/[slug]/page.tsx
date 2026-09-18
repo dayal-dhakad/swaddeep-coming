@@ -21,7 +21,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = workProjects.find((item) => item.slug === slug);
   return {
-    title: project ? `${project.title} — The Edit` : "The Edit",
+    title: project ? `${project.title} — Work` : "Work",
     description: project
       ? `View the ${project.title} image gallery at Swaddeep.`
       : undefined,
@@ -51,7 +51,7 @@ export default async function WorkProjectPage({ params }: ProjectPageProps) {
       <main className={styles.page} id="top">
         <section className={styles.detailHero} aria-labelledby="project-title">
           <div className={styles.detailTopline}>
-            <Link href="/work">← The Edit</Link>
+            <Link href="/work">← Work</Link>
           </div>
           <div className={styles.detailTitleRow}>
             <div>
@@ -123,7 +123,7 @@ export default async function WorkProjectPage({ params }: ProjectPageProps) {
         >
           <span>{nextProject ? "Up next" : "Explore more"}</span>
           <Link href={nextProject ? `/work/${nextProject.slug}` : "/work"}>
-            {nextProject ? nextProject.title : "The Edit"}
+            {nextProject ? nextProject.title : "Work"}
             <span aria-hidden="true">↗</span>
           </Link>
         </nav>

@@ -89,12 +89,21 @@ export default function AboutPage() {
         <section className={styles.legacy} aria-labelledby="legacy-title">
           <p className={styles.eyebrow}>Our story</p>
           <div className={styles.legacyGrid}>
-            <h2 id="legacy-title">
-              From Red Turtle
-              <br />
-              to Swaddeep
-            </h2>
-            <div>
+            <div className={styles.legacyTitle}>
+              <h2 id="legacy-title">
+                From Red Turtle
+                <br />
+                to Swaddeep
+              </h2>
+              <p className={styles.nameLockup}>
+                <strong className={styles.nameSwati}>SWATI</strong>
+                <span className={styles.nameSecondLine}>
+                  <span className={styles.nameDeepa}>DEEPA</span>
+                  <span className={styles.namePlus} aria-hidden="true">+</span>
+                </span>
+              </p>
+            </div>
+            <div className={styles.legacyCopy}>
               <p className={styles.lede}>A 12-year legacy.</p>
               <p>
                 What started twelve years ago as Red Turtle Branding Solutions
@@ -200,6 +209,10 @@ export default function AboutPage() {
               Quality gets you repeat customers. Design gets them to buy the
               first time.
             </h2>
+            <TriangleMark
+              variant="combine"
+              className={`${styles.triangle} ${styles.physicsTriangle}`}
+            />
           </div>
           <div className={styles.physicsBody}>
             <p>

@@ -1,21 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import localFont from "next/font/local";
 import { HeroSlider } from "@/components/hero-slider";
 import { SiteHeader } from "@/components/site-header";
 import { ContactForm } from "@/components/contact-form";
 import { SiteFooter } from "@/components/site-footer";
 import { TriangleMark } from "@/components/triangle-mark";
 import styles from "./page.module.css";
-
-const loverine = localFont({
-  src: "./fonts/Loverine.otf",
-  variable: "--font-loverine",
-  weight: "400",
-  style: "normal",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Swaddeep",
@@ -66,6 +57,14 @@ const marqueeItems = [
   "Market Research",
   "Brand Projection",
 ];
+
+const responsibilityElements = [
+  { name: "Earth", variant: "earth" },
+  { name: "Fire", variant: "fire" },
+  { name: "Water", variant: "water" },
+  { name: "Air", variant: "air" },
+  { name: "Sky", variant: "sky" },
+] as const;
 
 const clientLogos = [
   { title: "Kamal Brand", image: "/client-logos/1.png" },
@@ -130,7 +129,7 @@ export default function Home() {
           <a
             className={styles.explore}
             href="#work"
-            aria-label="Explore our approach"
+            aria-label="Explore our work"
           >
             <span>Explore</span>
             <TriangleMark variant="fire" className={styles.exploreTriangle} />
@@ -227,16 +226,16 @@ export default function Home() {
           </h2>
           <ul>
             <li>
-              <strong>INSIGHT</strong> to understand
+              <strong>INSIGHT</strong> To Understand
             </li>
             <li>
-              <strong>CLARITY</strong> in communication
+              <strong>CLARITY</strong> In Communication
             </li>
             <li>
-              <strong>COURAGE</strong> to be distinctive
+              <strong>COURAGE</strong> To Be Distinctive
             </li>
             <li>
-              <strong>CRAFT</strong> across every touchpoint
+              <strong>CRAFT</strong> Across Every Touchpoint
             </li>
           </ul>
         </section>
@@ -302,7 +301,7 @@ export default function Home() {
                 central to our process. When a strong product is not accepted, a
                 design glitch may be creating a communication gap.
               </p>
-              <p className={`${styles.pullQuote} ${loverine.variable}`}>
+              <p className={styles.pullQuote}>
                 “Bad packaging is like an attractive face with a missing tooth.”
               </p>
             </article>
@@ -370,6 +369,55 @@ export default function Home() {
         </section>
 
         <ContactForm />
+
+        <section
+          className={styles.responsibility}
+          id="responsibility"
+          aria-labelledby="responsibility-title"
+        >
+          <div className={styles.responsibilityIntro}>
+            <div className={styles.responsibilityHeading}>
+              <p className={styles.responsibilityEyebrow}>Our responsibility</p>
+              <h2 id="responsibility-title">
+                Corporate<br />Social<br />
+                <span>Responsibility</span>
+              </h2>
+            </div>
+            <div className={styles.responsibilityCopy}>
+              <p>
+                Swaddeep works in packaging design and paper printing. We ask
+                manufacturers to recycle packaging and its waste, and printers
+                to recycle offcuts from laminates and packaging.
+              </p>
+              <p>
+                In our paper printing work, we send waste for recycling or for
+                use in luggage packaging. We also pass on invitations to people
+                who turn them into envelopes.
+              </p>
+              <p>
+                We strongly encourage everyone to recycle laminates and paper.
+              </p>
+              <p className={styles.responsibilityEmphasis}>
+                We ask our associates to use earth friendly laminates so the
+                planet stays as clean as our own homes.
+              </p>
+            </div>
+          </div>
+          <div className={styles.responsibilityElements}>
+            <p className={styles.elementsEyebrow}>The five elements</p>
+            <ul className={styles.elementList}>
+              {responsibilityElements.map(({ name, variant }) => (
+                <li className={styles.elementItem} key={variant}>
+                  <TriangleMark
+                    variant={variant}
+                    className={styles.elementSymbol}
+                  />
+                  <span>{name}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
       </main>
 
       <SiteFooter />

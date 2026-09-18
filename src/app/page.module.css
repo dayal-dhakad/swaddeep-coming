@@ -181,6 +181,99 @@
   }
 }
 
+.responsibility {
+  scroll-margin-top: 6rem;
+  padding: clamp(5rem, 8vw, 9rem) clamp(1.25rem, 6vw, 7rem);
+  background: #f1efe8;
+  color: #171717;
+}
+.responsibilityIntro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: start;
+}
+.responsibilityEyebrow,
+.elementsEyebrow {
+  margin: 0 0 1.75rem;
+  font: 600 .75rem/1.3 var(--font-work-sans);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.responsibilityHeading h2 {
+  margin: 0;
+  font: 400 clamp(3.3rem, 5vw, 6rem)/.88 var(--font-bebas-neue);
+  text-transform: uppercase;
+}
+.responsibilityHeading h2 span { color: var(--brand); }
+.responsibilityCopy {
+  max-width: 38rem;
+  font: 400 clamp(1rem, 1.25vw, 1.2rem)/1.65 var(--font-work-sans);
+}
+.responsibilityCopy p { margin: 0 0 1.5rem; }
+.responsibilityCopy p:last-child { margin-bottom: 0; }
+.responsibilityEmphasis {
+  padding-left: clamp(1.25rem, 2vw, 2rem);
+  border-left: 3px solid var(--brand);
+  font-weight: 500;
+}
+.responsibilityElements { margin-top: clamp(4rem, 7vw, 7rem); }
+.elementsEyebrow { margin-bottom: 1rem; }
+.elementList {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  padding: 1px;
+  background: #c9c5ba;
+  list-style: none;
+}
+.elementItem {
+  display: flex;
+  min-width: 0;
+  min-height: clamp(11rem, 16vw, 16rem);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: #f1efe8;
+  color: var(--brand);
+}
+.elementItem span {
+  color: #171717;
+  font: 600 .8rem/1 var(--font-work-sans);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.elementSymbol { display: block; width: clamp(5rem, 7vw, 7rem); height: auto; overflow: visible; transform-box: fill-box; transform-origin: center; }
+.elementSymbol path { stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.elementItem:nth-child(1) .elementSymbol { animation: earthPulse 7.6s ease-in-out -1.2s infinite; }
+.elementItem:nth-child(2) .elementSymbol { animation: fireRise 6.8s ease-in-out -3.1s infinite; }
+.elementItem:nth-child(3) .elementSymbol { animation: waterSway 8.2s ease-in-out -2.4s infinite; }
+.elementItem:nth-child(4) .elementSymbol { animation: airDrift 9s ease-in-out -4.2s infinite; }
+.elementItem:nth-child(5) .elementSymbol { animation: skyBreathe 8.6s ease-in-out -1.8s infinite; }
+@keyframes earthPulse {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-.15rem) scale(1.035); }
+}
+@keyframes fireRise {
+  0%, 100% { transform: translateY(.2rem) rotate(-2deg) scale(.99); }
+  50% { transform: translateY(-.3rem) rotate(2deg) scale(1.02); }
+}
+@keyframes waterSway {
+  0%, 100% { transform: translateY(-.12rem) rotate(-1.8deg); }
+  50% { transform: translateY(.12rem) rotate(1.8deg); }
+}
+@keyframes airDrift {
+  0%, 100% { transform: translate(-.35rem, .1rem); }
+  50% { transform: translate(.35rem, -.1rem); }
+}
+@keyframes skyBreathe {
+  0%, 100% { transform: translateY(.18rem) scale(.98); }
+  50% { transform: translateY(-.18rem) scale(1.03); }
+}
+
 .marquee {
   overflow: hidden;
   background: white;
@@ -592,17 +685,34 @@
 }
 .identityDetails .pullQuote {
   margin-top: 3rem;
-  font-family: var(--font-loverine);
+  font-family: var(--font-amithen-face);
   font-size: clamp(1.9rem, 3vw, 3.4rem);
   font-weight: 400;
   line-height: 1.08;
 }
 
 .manifesto {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding: clamp(7rem, 12vw, 13rem) clamp(1.5rem, 8vw, 9rem);
   background: var(--brand);
   color: white;
 }
+.manifesto::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 0;
+  width: min(52%, 50rem);
+  background: url("/sketches/1.png") center 38% / cover no-repeat;
+  opacity: .42;
+  mix-blend-mode: multiply;
+  -webkit-mask-image: linear-gradient(to right, #000 0%, #000 50%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 0%, #000 50%, transparent 100%);
+  pointer-events: none;
+}
+.manifesto > * { position: relative; z-index: 1; }
 .manifesto span {
   display: block;
   font: 400 clamp(3.5rem, 7vw, 8rem)/0.9 var(--font-bebas-neue);
@@ -654,6 +764,8 @@
 }
 
 @media (max-width: 70rem) {
+  .responsibilityIntro { grid-template-columns: 1fr; gap: 3rem; }
+  .responsibilityCopy { max-width: 45rem; }
   .logoGrid {
     grid-auto-columns: 8.5rem;
   }
@@ -739,6 +851,8 @@
 }
 
 @media (max-width: 48rem) {
+  .elementList { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .elementItem:last-child { grid-column: 1 / -1; }
   .hero {
     padding-top: 13rem;
   }
@@ -757,6 +871,10 @@
 }
 
 @media (max-width: 39.999rem) {
+  .responsibility { padding: 5rem 1.25rem; }
+  .responsibilityHeading h2 { font-size: clamp(2.5rem, 10vw, 4rem); }
+  .elementItem { min-height: 10rem; }
+  .elementSymbol { width: 5rem; }
   .hero {
     height: auto;
     min-height: 100svh;
@@ -889,6 +1007,12 @@
   .manifesto {
     padding: 7rem 1.5rem;
   }
+  .manifesto::before {
+    width: 100%;
+    opacity: .18;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
   .manifesto h2 {
     font-size: clamp(4.6rem, 20vw, 7rem);
     line-height: 0.9;
@@ -909,6 +1033,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .elementSymbol { animation: none !important; }
   .identity::before {
     background-attachment: scroll;
   }

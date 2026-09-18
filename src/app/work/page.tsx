@@ -35,7 +35,7 @@ export default function WorkPage() {
             <span>Brand identity / Packaging</span>
           </div>
           <h1 id="work-title">
-            The Edit<span className={styles.period}>.</span>
+            Work<span className={styles.period}>.</span>
           </h1>
           <div className={styles.heroBottom}>
             <p>Explore the brands and packaging in our portfolio.</p>

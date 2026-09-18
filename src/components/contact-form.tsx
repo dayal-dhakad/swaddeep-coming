@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import styles from "./contact-form.module.css";
 
@@ -42,10 +43,18 @@ export function ContactForm() {
     >
       <div className={styles.intro}>
         <div className={styles.headingRow}>
-          <span className={styles.plane} aria-hidden="true" />
           <h2 id="contact-title">HOLA!</h2>
         </div>
         <p>Just a call away!</p>
+      </div>
+      <div className={styles.contactVisual}>
+        <Image
+          src="/contactpage.jpeg"
+          alt="Illustration of a woman holding a bowl, with paper planes around her"
+          fill
+          sizes="(max-width: 640px) 18rem, (max-width: 1120px) 24rem, 42vw"
+          className={styles.contactIllustration}
+        />
       </div>
 
       <form className={styles.form} onSubmit={handleSubmit}>
