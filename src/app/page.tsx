@@ -311,7 +311,7 @@ export default function Home() {
 
         <section
           className={styles.manifesto}
-          id="philosophy"
+          // id="philosophy"
           aria-labelledby="manifesto-title"
         >
           <span>What cannot be measured</span>

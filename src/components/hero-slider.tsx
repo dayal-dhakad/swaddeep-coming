@@ -6,28 +6,36 @@ import styles from "./hero-slider.module.css";
 
 const slides = [
   {
-    label: "Ramaiah",
-    category: "Brand experience",
-    src: "/homepage/Screenshot 2026-09-08 203325.png",
-    alt: "Ramaiah institutional event stage and environmental branding",
+    label: "GBM Masala",
+    category: "Packaging design",
+    src: "https://ik.imagekit.io/swaddeep/1%20PNG%203d/1%20PNG%203d/Gangwal%20Horeca%20logo%20and%20packagings/70b10099-d3e2-4ddb-aa8b-457e2eb783de.jpg",
+    alt: "GBM Masala spice packages on a pale yellow background",
+    width: 1600,
+    height: 955,
   },
   {
-    label: "Anna Chandy",
-    category: "Brand identity",
-    src: "/homepage/Screenshot 2026-09-08 203345.png",
-    alt: "Anna Chandy identity against a deep green illustrated landscape",
+    label: "GBM Masala",
+    category: "Packaging design",
+    src: "https://ik.imagekit.io/swaddeep/1%20PNG%203d/1%20PNG%203d/Gangwal%20Horeca%20logo%20and%20packagings/7964e07f-f55f-48a6-99b8-20217e3579bf.jpg",
+    alt: "GBM Masala spice packages on a dark red background",
+    width: 1080,
+    height: 668,
   },
   {
-    label: "Agami Summit",
-    category: "Campaign design",
-    src: "/homepage/Screenshot 2026-09-08 203144.png",
-    alt: "Agami Summit Touch Feel Shape environmental graphic",
+    label: "Gangwal Horeca",
+    category: "Packaging design",
+    src: "https://ik.imagekit.io/swaddeep/1%20PNG%203d/1%20PNG%203d/Gangwal%20Horeca%20logo%20and%20packagings/Horeca%20packaging%20Range%20.png?updatedAt=1789493606593",
+    alt: "Seven colorful Gangwal Horeca food packages displayed in a row",
+    width: 3963,
+    height: 1660,
   },
   {
-    label: "Cities",
-    category: "Editorial design",
-    src: "/homepage/image1.png",
-    alt: "Open Cities publication displayed against a yellow background",
+    label: "Gangwal Salute India",
+    category: "Packaging design",
+    src: "https://ik.imagekit.io/swaddeep/1%20PNG%203d/1%20PNG%203d/Gangwal%20Salute%20india%20logo%20and%20packagings/Gangwal%20Salute%20india%20packaging%20Rang.png?updatedAt=1789493645735",
+    alt: "Four Gangwal Salute India daliya packages displayed in a row",
+    width: 5000,
+    height: 1041,
   },
 ];
 
@@ -52,14 +60,14 @@ export function HeroSlider() {
           <article
             className={`${styles.slide} ${index === activeSlide ? styles.active : ""}`}
             aria-hidden={index !== activeSlide}
-            key={slide.label}
+            key={slide.src}
           >
             <ImageKitImage
               urlEndpoint="https://ik.imagekit.io/swaddeep"
               src={slide.src}
               alt={slide.alt}
-              width={1680}
-              height={945}
+              width={slide.width}
+              height={slide.height}
               sizes="100vw"
               className={styles.image}
               priority={index === 0}
@@ -75,9 +83,9 @@ export function HeroSlider() {
         {slides.map((slide, index) => (
           <button
             type="button"
-            key={slide.label}
+            key={slide.src}
             className={index === activeSlide ? styles.current : ""}
-            aria-label={`Show ${slide.label} project`}
+            aria-label={`Show ${slide.label} slide ${index + 1}`}
             aria-current={index === activeSlide ? "true" : undefined}
             onClick={() => setActiveSlide(index)}
           >

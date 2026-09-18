@@ -8,7 +8,7 @@ const links = [
   { label: "About DR. Swati Shobha", href: "/swati-shobha" },
   { label: "What we do", href: "/about#what-we-do" },
   { label: "Work", href: "/work" },
-  { label: "Philosophy", href: "/#philosophy" },
+  // { label: "Philosophy", href: "/#philosophy" },
   { label: "Contact", href: "/#contact" },
 ];
 

@@ -71,7 +71,14 @@ export default function AboutPage() {
             <h1 id="about-title">Swaddeep</h1>
           </div>
           <div className={styles.heroBottom}>
-            <TriangleMark variant="explore" className={`${styles.triangle} ${styles.heroStar}`} />
+            <Image
+              src="/plane-outline-white.png"
+              alt=""
+              width={1254}
+              height={1254}
+              sizes="(max-width: 672px) 4.5rem, 8rem"
+              className={styles.heroPlane}
+            />
             <p>
               We stand at the beginning with ambitious founders and breathe new
               life into established FMCG producers.
@@ -122,12 +129,16 @@ export default function AboutPage() {
           </blockquote>
         </section>
 
-        <section className={styles.awareness} aria-labelledby="awareness-title">
+        <section
+          id="awareness"
+          className={styles.awareness}
+          aria-labelledby="awareness-title"
+        >
           <div className={styles.awarenessLead}>
             <p className={styles.eyebrow}>The Swaddeep philosophy</p>
             <h2 id="awareness-title">
-              We pay a heavy price in business when we act without deep
-              awareness.
+              We pay a heavy price in business when we act without{" "}
+              <span>deep awareness.</span>
             </h2>
             <p>
               The finest packaging and brand identities aren’t rushed—they are
@@ -153,7 +164,10 @@ export default function AboutPage() {
         </section>
 
         <section className={styles.business} aria-labelledby="business-title">
-          <TriangleMark variant="progress" className={`${styles.triangle} ${styles.businessStar}`} />
+          <TriangleMark
+            variant="progress"
+            className={`${styles.triangle} ${styles.businessStar}`}
+          />
           <div>
             <p className={styles.eyebrow}>The commercial test</p>
             <h2 id="business-title">
@@ -257,7 +271,7 @@ export default function AboutPage() {
         <section className={styles.signature} aria-labelledby="signature-title">
           <div className={styles.signatureIntro}>
             <p>Our promise, in one line</p>
-            <span aria-hidden="true">01</span>
+            {/* <span aria-hidden="true">01</span> */}
           </div>
           <h2 id="signature-title">
             <span>Product mein</span>
@@ -287,35 +301,28 @@ export default function AboutPage() {
         <section
           className={styles.lines}
           id="what-we-do"
-          aria-labelledby="services-title"
+          aria-labelledby="what-we-do-title"
         >
           <div className={styles.linesHeader}>
-            <div className={styles.servicesHeading}>
-              <p className={styles.eyebrow}>Services</p>
-              <h2 id="services-title">What We Do</h2>
-              <p className={styles.servicesNote}>
-                From the first strategic thought to the final printed piece.
-              </p>
-            </div>
-            <TriangleMark variant="express" className={`${styles.triangle} ${styles.servicesMark}`} />
+            <p className={styles.eyebrow}>Swaddeep services</p>
+            <h2 id="what-we-do-title">What We Do</h2>
+            <p>From the first strategic thought to the final printed piece.</p>
           </div>
-          <ol className={styles.linesTrack}>
-            {services.map((service, index) => (
-              <li key={service}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{service}</h3>
-                <i aria-hidden="true">↗</i>
-              </li>
-            ))}
-          </ol>
+          <div className={styles.servicePanel}>
+            <ul aria-label="Our services">
+              {services.map((service) => (
+                <li key={service}>{service}</li>
+              ))}
+            </ul>
+          </div>
           <div className={styles.contactCta}>
-            <TriangleMark variant="transition" className={`${styles.triangle} ${styles.contactStar}`} />
             <p>Ready to build a brand that lasts?</p>
             <Link href="mailto:swaddeep99@gmail.com">
               Start a conversation <span aria-hidden="true">↗</span>
             </Link>
           </div>
         </section>
+
       </main>
       <SiteFooter />
     </>

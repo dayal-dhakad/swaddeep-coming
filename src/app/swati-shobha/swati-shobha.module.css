@@ -4,7 +4,7 @@
 .heroCopy { position: relative; z-index: 2; align-self: center; }
 .hero h1 { margin: clamp(2rem,5vh,4rem) 0 0; display: grid; width: min-content; font-weight: 400; }
 .hero h1 span { white-space: nowrap; font: 400 clamp(5.4rem,11vw,11.5rem)/.72 var(--font-bebas-neue); text-transform: uppercase; }
-.hero h1 strong { margin-left: clamp(1.5rem,8vw,8rem); color: var(--brand); font: 400 clamp(5.8rem,12vw,12.5rem)/.7 var(--font-amithen-face); }
+.hero h1 strong { margin-left: clamp(1.5rem,8vw,8rem); color: var(--brand); font: 400 clamp(6.5rem,14vw,14rem)/.8 var(--font-amithen-face); }
 .intro { width: min(31rem,85%); margin: clamp(2.5rem,5vh,4.5rem) 0 0 auto; padding-left: 1.5rem; border-left: 1px solid var(--brand); font: 500 clamp(1rem,1.35vw,1.28rem)/1.55 var(--font-work-sans); }
 .heroQuote { position: relative; width: min(31rem,100%); margin: clamp(1.5rem,3vh,2rem) 0 0; padding: clamp(1.25rem,2vw,1.6rem); border-radius: 1.3rem 1.3rem 1.3rem .35rem; background: linear-gradient(135deg,#302725,#171717 78%); color: #fff9f0; box-shadow: 0 1rem 2rem rgba(23,23,23,.12); }
 .heroQuote::before { display: block; height: 2rem; content: "“"; color: var(--orange); font: 400 3.75rem/1 Georgia,serif; }
@@ -67,7 +67,7 @@
 .consultingPortrait img { display: block; width: 100%; height: auto; }
 .consultingNarrative { min-width: 0; }
 .consultingLead { padding: .5rem 0 clamp(4.5rem,10vh,7rem); }
-.consultingLead .kicker,.consultingBrands .kicker { margin-bottom: 1.4rem; color: #ffd7de; }
+.consultingLead .kicker,.consultingBrands .kicker { margin-bottom: 1.4rem; color: white; }
 .consulting h2 { max-width: 43rem; font-size: clamp(3.5rem,5vw,5.5rem); }
 .consultingLead > p:not(.kicker):not(.consultingMetric) { max-width: 34rem; margin: 1.5rem 0 0; font: 400 clamp(1.05rem,1.4vw,1.3rem)/1.5 var(--font-work-sans); }
 .consultingMetric { display: flex; align-items: center; gap: 1.25rem; width: fit-content; max-width: 100%; margin: 2rem 0 0; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,.45); }
@@ -100,7 +100,7 @@
 .closing::before { position: absolute; top: -8rem; right: -8rem; width: clamp(16rem,28vw,30rem); aspect-ratio: 1; content: ""; border: 1px solid rgba(196,18,47,.15); border-radius: 50%; box-shadow: 0 0 0 3rem rgba(196,18,47,.035),0 0 0 6rem rgba(196,18,47,.025); pointer-events: none; }
 .closing > p { position: relative; margin: 0 0 clamp(2rem,4vw,4rem); color: var(--brand); font: 600 .72rem/1 var(--font-work-sans); letter-spacing: .15em; text-transform: uppercase; }
 .closing h2 { position: relative; max-width: 78rem; margin-inline: auto; font: 400 clamp(3.2rem,6vw,6.5rem)/.9 var(--font-bebas-neue); }
-.closing h2 em { display: block; width: fit-content; margin: .05em auto 0; color: var(--brand); font: 400 clamp(4.5rem,8vw,8rem)/.85 var(--font-amithen-face); text-transform: none; }
+.closing h2 em { display: block; width: fit-content; margin: .05em auto 0; color: var(--brand); font: 400 clamp(5rem,9vw,9rem)/.95 var(--font-amithen-face); text-transform: none; }
 .closing a { position: relative; width: fit-content; margin: clamp(2.5rem,5vw,5rem) auto 0; padding: 1rem 1.5rem; display: flex; gap: 2rem; align-items: center; border: 1px solid var(--ink); border-radius: 4rem; background: var(--ink); color: white; font: 500 .85rem/1 var(--font-work-sans); transition: background .25s,color .25s,border-color .25s; }
 .closing a:hover,.closing a:focus-visible { border-color: var(--brand); background: var(--brand); color: white; }
 .closing a:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; }
@@ -116,7 +116,7 @@
 @media (max-width: 64rem) {
   .hero { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .hero h1 span { font-size: clamp(4.5rem,10vw,7rem); }
-  .hero h1 strong { font-size: clamp(4.8rem,11vw,7.5rem); }
+  .hero h1 strong { font-size: clamp(5.4rem,13vw,8.5rem); }
   .story,.education,.consultingTop,.qa { grid-template-columns: 1fr; }
   .consulting { min-height: auto; }
   .consultingPortrait { position: static; width: min(100%,26rem); }

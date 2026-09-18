@@ -35,7 +35,7 @@ const workSans = Work_Sans({
 });
 
 const displayScript = localFont({
-  src: "./fonts/RusticRoadway.otf",
+  src: "./fonts/Amithen.otf",
   variable: "--font-amithen-face",
   weight: "400",
   style: "normal",
