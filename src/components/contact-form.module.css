@@ -29,7 +29,7 @@
 @media (max-width: 70rem) {
   .section { grid-template-columns: 1fr; grid-template-rows: none; gap: 1.5rem; }
   .intro,.contactVisual,.form { grid-column: 1; grid-row: auto; }
-  .contactVisual { width: min(100%,24rem); }
+  .contactVisual { width: min(100%,24rem); margin: 0 auto; }
 }
 
 @media (max-width: 40rem) {
