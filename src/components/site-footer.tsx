@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { SiInstagram, SiWhatsapp } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { SiInstagram, SiWhatsapp, SiYoutube } from "react-icons/si";
 import { FooterNavigation } from "./footer-navigation";
 import styles from "./site-footer.module.css";
 
@@ -42,6 +43,22 @@ export function SiteFooter() {
               aria-label="WhatsApp"
             >
               <SiWhatsapp size={26} aria-hidden="true" />
+            </a>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedinIn size={26} aria-hidden="true" />
+            </a>
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <SiYoutube size={26} aria-hidden="true" />
             </a>
           </div>
         </div>

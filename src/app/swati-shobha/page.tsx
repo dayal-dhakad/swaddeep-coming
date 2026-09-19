@@ -56,12 +56,11 @@ const questions = [
   },
 ];
 
-const consultingClients = [
-  "Swadeep Edible Oil",
-  "Gangwal",
-  "Shree Ganesh Besan Mill",
-  "GBM",
-  "SGT",
+const consultingMilestones = [
+  "100 plus Edible Oil Brand",
+  "350 plus Clients",
+  "1 agency majorly focusing on Rural and Regional Brand Development",
+  "12 years of Swaddeep but 16 years of experiences",
 ];
 
 const consultingFor = [
@@ -123,18 +122,27 @@ export default function SwatiShobhaPage() {
           <div className={styles.statementContent}>
             <p className={styles.kicker}>A layered education</p>
             <h2 className={styles.statementLine} id="statement-title">
-              Science.<br />Story.<br /><span>Strategy.</span>
+              Literature.
+              <br />
+              Psychology &
+              <br />
+              <span>Advertising.</span>
             </h2>
             <p className={styles.statementCopy}>
               Her academic path moves between biotechnology, mass communication,
-              literature, and advertising—an unusual combination that informs how
-              she reads both products and people.
+              literature, and advertising—an unusual combination that informs
+              how she reads both products and people.
             </p>
           </div>
           <div className={styles.statementVisual} aria-hidden="true">
-            <span className={styles.statementOrbit} />
-            <TriangleMark variant="combine" className={styles.statementSymbol} />
-            <span className={styles.statementVisualDot} />
+            <TriangleMark
+              variant="combine"
+              className={styles.statementSymbolSmall}
+            />
+            <TriangleMark
+              variant="combine"
+              className={styles.statementSymbolLarge}
+            />
           </div>
         </section>
 
@@ -173,7 +181,7 @@ export default function SwatiShobhaPage() {
           <div className={styles.consultingTop}>
             <div className={styles.consultingPortrait}>
               <Image
-                src="/swati-shobha/dr-swati-consultant.png"
+                src="https://ik.imagekit.io/swaddeep/caricature/49588708-fac3-4dc8-833c-32a9780c16cf.jpg"
                 alt="Illustration of Dr. Swati Shobha in a dark blazer, gesturing beside paper planes"
                 width={1086}
                 height={1448}
@@ -198,12 +206,12 @@ export default function SwatiShobhaPage() {
 
               <div className={styles.consultingBrands}>
                 <p className={styles.kicker}>FMCG consulting</p>
-                <h3>Brands behind the brief.</h3>
+                <h3>To be continued.</h3>
                 <ul>
-                  {consultingClients.map((client, index) => (
-                    <li key={client}>
+                  {consultingMilestones.map((milestone, index) => (
+                    <li key={milestone}>
                       <span>{String(index + 1).padStart(2, "0")}</span>
-                      <span>{client}</span>
+                      <span>{milestone}</span>
                     </li>
                   ))}
                 </ul>
@@ -251,13 +259,21 @@ export default function SwatiShobhaPage() {
           </div>
           <div className={styles.qaList}>
             {questions.map((item, index) => (
-              <details name="swati-questions" open={index === 0} key={item.question}>
+              <details
+                name="swati-questions"
+                open={index === 0}
+                key={item.question}
+              >
                 <summary>
                   <span>{item.question}</span>
-                  <span className={styles.qaIcon} aria-hidden="true">+</span>
+                  <span className={styles.qaIcon} aria-hidden="true">
+                    +
+                  </span>
                 </summary>
                 <div className={styles.qaAnswer}>
-                  {item.answer.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                  {item.answer.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
                 </div>
               </details>
             ))}
@@ -267,7 +283,8 @@ export default function SwatiShobhaPage() {
         <section className={styles.closing} aria-labelledby="closing-title">
           <p>Her point of view</p>
           <h2 id="closing-title">
-            Building regional brands<br />
+            Building regional brands
+            <br />
             with the clarity to become
             <em>visible.</em>
           </h2>

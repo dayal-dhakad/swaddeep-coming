@@ -27,7 +27,9 @@
 .nameLockup { display: flex; flex-direction: column; align-items: flex-start; width: 100%; margin: clamp(1.75rem,2.5vw,2.5rem) 0 0; padding-top: 1.25rem; border-top: 1px solid #cfcac1; }
 .nameSwati { font: 700 clamp(4.75rem,6vw,7rem)/.82 var(--font-bebas-neue); }
 .nameSecondLine { display: inline-flex; align-items: baseline; gap: clamp(.4rem,1vw,1rem); max-width: 100%; margin: -.05em 0 0 clamp(2rem,12vw,13rem); }
-.nameDeepa { color: var(--brand); font: 400 clamp(5.5rem,7vw,8rem)/.78 var(--font-amithen-face); }
+.nameDeepa { font: 400 clamp(5.5rem,7vw,8rem)/.78 var(--font-amithen-face); }
+.nameRed { color: var(--brand); }
+.nameBlack { color: var(--ink); }
 .namePlus { color: var(--brand); font: 400 clamp(3.25rem,4vw,5rem)/.8 var(--font-work-sans); }
 .legacyCopy { max-width: 39rem; font: 400 clamp(1rem,1.25vw,1.22rem)/1.65 var(--font-work-sans); }
 .legacyCopy p:not(:last-child) { margin-bottom: 1.75rem; }
@@ -86,7 +88,7 @@
 .signatureSeal i:nth-child(3) { inset: 20%; background: var(--brand); }
 .signaturePlane { position: relative; z-index: 1; width: 40%; height: auto; object-fit: contain; }
 .signatureNote { grid-column: 1 / -1; justify-self: end; max-width: 34rem; margin: 0; padding-left: 2rem; border-left: 1px solid var(--brand); font: 500 clamp(1rem,1.5vw,1.45rem)/1.5 var(--font-work-sans); }
-.lines { min-height: 100svh; padding: clamp(7rem,13svh,10rem) clamp(1.25rem,6vw,7rem) clamp(3rem,6svh,5rem); display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: clamp(1.5rem,4svh,3rem); background: #fb8120; color: #281711; text-align: center; }
+.lines { min-height: 100svh; padding: clamp(7rem,13svh,10rem) clamp(1.25rem,6vw,7rem) 0; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: clamp(1.5rem,4svh,3rem); background: #fb8120; color: #281711; text-align: center; }
 .linesHeader { max-width: 60rem; }
 .linesHeader .eyebrow { margin-bottom: clamp(1rem,2svh,1.5rem); }
 .linesHeader h2 { font-size: clamp(5rem,7vw,8.5rem); line-height: .85; white-space: nowrap; }
@@ -98,7 +100,7 @@
 .servicePanel li:nth-child(-n+3) { grid-column: span 2; }
 .servicePanel li:nth-child(n+4) { grid-column: span 3; }
 .servicePanel li:nth-child(1),.servicePanel li:nth-child(2),.servicePanel li:nth-child(4) { border-right: 1px solid rgba(255,255,255,.55); }
-.contactCta { width: 100%; padding-top: clamp(1.25rem,3svh,2rem); display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; border-top: 1px solid rgba(40,23,17,.5); text-align: left; }
+.contactCta { width: 100vw; margin-inline: calc(50% - 50vw); padding: clamp(1.25rem,3svh,2rem) clamp(1.25rem,6vw,7rem); display: flex; flex-shrink: 0; justify-content: space-between; align-items: center; gap: 1.5rem; border-top: 1px solid rgba(40,23,17,.5); background: white; text-align: left; }
 .contactCta p { margin: 0; font: 400 clamp(1.8rem,3vw,3rem)/.95 var(--font-bebas-neue); text-transform: uppercase; }
 .contactCta a { display: inline-flex; align-items: center; gap: 1.5rem; min-height: 3.5rem; padding: 0 1.5rem; border: 1px solid #281711; border-radius: 3rem; background: #281711; color: white; font: 500 .9rem/1 var(--font-work-sans); white-space: nowrap; transition: background .2s,color .2s; }
 .contactCta a:hover,.contactCta a:focus-visible { background: transparent; color: #281711; }
@@ -158,7 +160,7 @@
   .signature h2 strong { margin-left: clamp(1rem,6vw,2.5rem); font-size: clamp(4rem,18vw,5.7rem); }
   .signatureSeal { width: 6.5rem; right: 1.25rem; bottom: 8rem; opacity: .7; }
   .signatureNote { justify-self: start; max-width: calc(100% - 3rem); }
-  .lines { padding: clamp(7rem,14svh,8rem) 1.25rem 2.5rem; gap: 1.5rem; }
+  .lines { padding: clamp(7rem,14svh,8rem) 1.25rem 0; gap: 1.5rem; }
   .linesHeader h2 { font-size: clamp(3.3rem,12vw,4.5rem); white-space: normal; }
   .servicePanel { padding: 1.5rem 1.25rem; border-radius: 2rem; }
   .servicePanel ul { grid-template-columns: 1fr; row-gap: .45rem; font-size: .9rem; }

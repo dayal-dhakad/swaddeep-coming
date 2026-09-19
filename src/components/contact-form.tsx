@@ -49,7 +49,7 @@ export function ContactForm() {
       </div>
       <div className={styles.contactVisual}>
         <Image
-          src="/contactpage.jpeg"
+          src="https://ik.imagekit.io/swaddeep/caricature/2ef5f1ee-4e08-4264-ab16-063ec6d95f8e.jpg"
           alt="Illustration of a woman holding a bowl, with paper planes around her"
           fill
           sizes="(max-width: 640px) 18rem, (max-width: 1120px) 24rem, 42vw"

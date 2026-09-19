@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { SiInstagram, SiWhatsapp } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { SiInstagram, SiWhatsapp, SiYoutube } from "react-icons/si";
 
 const navigation = [
   { label: "About", href: "/about" },
@@ -118,6 +119,24 @@ export function SiteHeader() {
             className="grid size-12 place-items-center rounded-full border border-white/60 text-white transition-colors hover:bg-white hover:text-brand focus-visible:bg-white focus-visible:text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             <SiWhatsapp size={26} aria-hidden="true" />
+          </a>
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="grid size-12 place-items-center rounded-full border border-white/60 text-white transition-colors hover:bg-white hover:text-brand focus-visible:bg-white focus-visible:text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            <FaLinkedinIn size={26} aria-hidden="true" />
+          </a>
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            className="grid size-12 place-items-center rounded-full border border-white/60 text-white transition-colors hover:bg-white hover:text-brand focus-visible:bg-white focus-visible:text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            <SiYoutube size={26} aria-hidden="true" />
           </a>
         </nav>
       </div>

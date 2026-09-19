@@ -379,7 +379,10 @@ export default function Home() {
             <div className={styles.responsibilityHeading}>
               <p className={styles.responsibilityEyebrow}>Our responsibility</p>
               <h2 id="responsibility-title">
-                Corporate<br />Social<br />
+                Corporate
+                <br />
+                Social
+                <br />
                 <span>Responsibility</span>
               </h2>
             </div>
@@ -404,7 +407,7 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.responsibilityElements}>
-            <p className={styles.elementsEyebrow}>The five elements</p>
+            <p className={styles.elementsEyebrow}>A Bow to Nature</p>
             <ul className={styles.elementList}>
               {responsibilityElements.map(({ name, variant }) => (
                 <li className={styles.elementItem} key={variant}>

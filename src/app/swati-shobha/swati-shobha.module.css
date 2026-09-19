@@ -26,13 +26,11 @@
 .statementLine { margin: clamp(1.5rem,3vw,3rem) 0 0; font: 400 clamp(5rem,8vw,8.5rem)/.76 var(--font-bebas-neue); text-transform: uppercase; }
 .statementLine span { color: #ffbd85; }
 .statementCopy { max-width: 37rem; margin: clamp(1.75rem,3vw,3rem) 0 0; padding-left: 1.25rem; border-left: 2px solid #ffbd85; font: 400 clamp(1rem,1.2vw,1.2rem)/1.55 var(--font-work-sans); text-wrap: pretty; }
-.statementVisual { position: relative; display: grid; place-items: center; width: min(100%,30rem); aspect-ratio: 1; justify-self: center; border: 1px solid rgba(255,255,255,.45); border-radius: 50%; box-shadow: 0 0 0 clamp(1.5rem,3vw,3rem) rgba(255,255,255,.055),0 0 0 clamp(3.5rem,7vw,7rem) rgba(255,255,255,.035); }
-.statementVisual::before { position: absolute; inset: 18%; content: ""; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; transform: rotate(-30deg) scaleX(.65); }
-.statementVisual::after { position: absolute; inset: 29%; content: ""; border: 1px solid rgba(255,255,255,.32); border-radius: 50%; }
-.statementOrbit { position: absolute; inset: 8%; border: 1px dashed rgba(255,255,255,.35); border-radius: 50%; }
-.statementSymbol { position: relative; z-index: 1; width: 38%; height: auto; color: #fff4e8; }
-.statementSymbol path { stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
-.statementVisualDot { position: absolute; z-index: 2; top: 14%; right: 15%; width: 1rem; aspect-ratio: 1; border-radius: 50%; background: #ffbd85; box-shadow: 0 0 0 .5rem rgba(255,189,133,.14); }
+.statementVisual { position: relative; display: grid; place-items: center; width: min(100%,30rem); aspect-ratio: 1; justify-self: center; }
+.statementSymbolSmall,.statementSymbolLarge { position: absolute; height: auto; color: #fff4e8; transform-origin: center; will-change: transform,opacity; }
+.statementSymbolSmall { z-index: 2; width: 38%; animation: statementTriangleFloat 7s cubic-bezier(.45,0,.55,1) infinite; }
+.statementSymbolLarge { z-index: 1; width: 78%; color: #ffbd85; opacity: 0; animation: statementTriangleReveal 7s cubic-bezier(.45,0,.55,1) infinite both; }
+.statementSymbolSmall path,.statementSymbolLarge path { stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .story { padding: clamp(6rem,10vw,11rem) clamp(1.25rem,6vw,7rem); display: grid; grid-template-columns: minmax(8rem,.35fr) minmax(25rem,1.65fr); gap: clamp(3rem,8vw,10rem); }
 .sectionLabel { display: flex; gap: 1rem; align-items: flex-start; font: 600 .74rem/1.2 var(--font-work-sans); letter-spacing: .12em; text-transform: uppercase; }
 .sectionLabel span { color: var(--brand); }
@@ -44,9 +42,8 @@
 .qaIntro { position: sticky; top: 8rem; align-self: start; }
 .qaIntro .kicker { color: #ffb15f; }
 .qaIntro h2 { margin: 1.5rem 0 0; font: 400 clamp(4rem,7vw,7rem)/.85 var(--font-bebas-neue); text-transform: uppercase; }
-.qaMotif { position: relative; display: grid; place-items: center; width: clamp(8rem,13vw,13rem); aspect-ratio: 1; margin-top: clamp(2rem,4vw,4rem); border: 1px solid rgba(255,248,240,.45); border-radius: 50%; box-shadow: 0 0 0 1.5rem rgba(255,248,240,.035),0 0 0 3rem rgba(255,248,240,.025); }
-.qaMotif::after { position: absolute; top: 14%; right: 12%; width: .65rem; aspect-ratio: 1; content: ""; border-radius: 50%; background: #ffb15f; }
-.qaMotifMark { width: 58%; height: auto; color: #ffb15f; animation: qaFloat 5s ease-in-out infinite; }
+.qaMotif { width: clamp(9rem,14vw,14rem); margin-top: clamp(2rem,4vw,4rem); background: transparent; }
+.qaMotifMark { display: block; width: 100%; height: auto; color: #ffb15f; animation: qaFloat 5s ease-in-out infinite; }
 .qaMotifMark path { stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .qaList { border-top: 1px solid rgba(255,248,240,.42); }
 .qaList details { border-bottom: 1px solid rgba(255,248,240,.3); }
@@ -100,13 +97,27 @@
 .closing::before { position: absolute; top: -8rem; right: -8rem; width: clamp(16rem,28vw,30rem); aspect-ratio: 1; content: ""; border: 1px solid rgba(196,18,47,.15); border-radius: 50%; box-shadow: 0 0 0 3rem rgba(196,18,47,.035),0 0 0 6rem rgba(196,18,47,.025); pointer-events: none; }
 .closing > p { position: relative; margin: 0 0 clamp(2rem,4vw,4rem); color: var(--brand); font: 600 .72rem/1 var(--font-work-sans); letter-spacing: .15em; text-transform: uppercase; }
 .closing h2 { position: relative; max-width: 78rem; margin-inline: auto; font: 400 clamp(3.2rem,6vw,6.5rem)/.9 var(--font-bebas-neue); }
-.closing h2 em { display: block; width: fit-content; margin: .05em auto 0; color: var(--brand); font: 400 clamp(5rem,9vw,9rem)/.95 var(--font-amithen-face); text-transform: none; }
+.closing h2 em { display: block; width: fit-content; margin: .12em auto 0; color: var(--brand); font: 400 clamp(7rem,18vw,18rem)/.82 var(--font-amithen-face); text-transform: none; }
 .closing a { position: relative; width: fit-content; margin: clamp(2.5rem,5vw,5rem) auto 0; padding: 1rem 1.5rem; display: flex; gap: 2rem; align-items: center; border: 1px solid var(--ink); border-radius: 4rem; background: var(--ink); color: white; font: 500 .85rem/1 var(--font-work-sans); transition: background .25s,color .25s,border-color .25s; }
 .closing a:hover,.closing a:focus-visible { border-color: var(--brand); background: var(--brand); color: white; }
 .closing a:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; }
 @keyframes reveal { from { opacity: 0; clip-path: inset(12% 0 0); transform: translateY(2rem); } to { opacity: 1; clip-path: inset(0); transform: none; } }
 @keyframes drift { 0%,100% { translate: 0 0; rotate: -4deg; } 50% { translate: 0 .9rem; rotate: 4deg; } }
 @keyframes qaFloat { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-.5rem) rotate(3deg); } }
+@keyframes statementTriangleFloat {
+  0% { opacity: .35; transform: translateY(.75rem) scale(.82); }
+  18%,35% { opacity: 1; transform: translateY(0) scale(1); }
+  58% { opacity: 1; transform: translateY(-.55rem) scale(1.04); }
+  82% { opacity: .9; transform: translateY(0) scale(1); }
+  100% { opacity: .35; transform: translateY(.75rem) scale(.82); }
+}
+@keyframes statementTriangleReveal {
+  0%,28% { opacity: 0; transform: scale(.38); }
+  48% { opacity: .7; transform: scale(.86); }
+  65% { opacity: .62; transform: scale(1); }
+  86% { opacity: .2; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(1.16); }
+}
 @media (min-width: 64.01rem) and (max-height: 850px) {
   .consulting { padding-top: 7rem; padding-bottom: 1.25rem; }
   .consultingPortrait { top: max(5.5rem,calc((100svh - min(30.67rem,64svh))/2)); width: min(100%,23rem,48svh); }
@@ -148,4 +159,7 @@
   .consultingBrands { padding-bottom: 4rem; }
   .consultingPractice { border-radius: 1.25rem; }
 }
-@media (prefers-reduced-motion: reduce) { .portraitWrap,.heroMark,.qaMotifMark { animation: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .portraitWrap,.heroMark,.qaMotifMark,.statementSymbolSmall,.statementSymbolLarge { animation: none; }
+  .statementSymbolLarge { opacity: .65; }
+}

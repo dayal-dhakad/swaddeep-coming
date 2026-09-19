@@ -96,10 +96,16 @@ export default function AboutPage() {
                 to Swaddeep
               </h2>
               <p className={styles.nameLockup}>
-                <strong className={styles.nameSwati}>SWATI</strong>
+                <strong className={styles.nameSwati}>
+                  <span className={styles.nameRed}>SWA</span>
+                  <span className={styles.nameBlack}>TI</span>
+                </strong>
                 <span className={styles.nameSecondLine}>
-                  <span className={styles.nameDeepa}>DEEPA</span>
-                  <span className={styles.namePlus} aria-hidden="true">+</span>
+                  <span className={styles.namePlus}>+</span>
+                  <span className={styles.nameDeepa}>
+                    <span className={styles.nameRed}>DEEP</span>
+                    <span className={styles.nameBlack}>A</span>
+                  </span>
                 </span>
               </p>
             </div>
