@@ -80,8 +80,8 @@ export default function AboutPage() {
               className={styles.heroPlane}
             />
             <p>
-              We stand at the beginning with ambitious founders and breathe new
-              life into established FMCG producers.
+              We begin with an impact creating lasting impression on consumers
+              and pitching your sales. Swaddeep brings Brand Memory and Sales.
             </p>
           </div>
         </section>
@@ -341,7 +341,6 @@ export default function AboutPage() {
             </Link>
           </div>
         </section>
-
       </main>
       <SiteFooter />
     </>

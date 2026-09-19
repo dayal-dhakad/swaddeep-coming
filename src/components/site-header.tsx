@@ -121,7 +121,7 @@ export function SiteHeader() {
             <SiWhatsapp size={26} aria-hidden="true" />
           </a>
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/dr-swati-shobha-sevlani-72294279"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"

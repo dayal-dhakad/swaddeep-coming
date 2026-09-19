@@ -10,7 +10,7 @@ export function SiteFooter() {
       <div className={styles.footerDetails}>
         <div className={styles.footerIdentity}>
           <Image
-            src="/plane-outline-white.png"
+            src="/paper-plane.svg"
             alt="Outline paper plane"
             width={1254}
             height={1254}
@@ -45,7 +45,7 @@ export function SiteFooter() {
               <SiWhatsapp size={26} aria-hidden="true" />
             </a>
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/dr-swati-shobha-sevlani-72294279"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

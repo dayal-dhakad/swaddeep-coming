@@ -715,12 +715,17 @@
 .manifesto > * { position: relative; z-index: 1; }
 .manifesto span {
   display: block;
+  max-width: 67rem;
+  margin: 0 0 0 auto;
   font: 400 clamp(3.5rem, 7vw, 8rem)/0.9 var(--font-bebas-neue);
   text-transform: uppercase;
+  text-align: right;
 }
 .manifesto h2 {
-  margin: clamp(1.25rem, 2.5vw, 2.5rem) 0 clamp(3rem, 6vw, 6rem);
+  max-width: 67rem;
+  margin: clamp(1.25rem, 2.5vw, 2.5rem) 0 clamp(3rem, 6vw, 6rem) auto;
   font: 400 clamp(4.4rem, 8.2vw, 10rem)/0.9 var(--font-amithen-face);
+  text-align: right;
 }
 .manifesto p {
   max-width: 67rem;
